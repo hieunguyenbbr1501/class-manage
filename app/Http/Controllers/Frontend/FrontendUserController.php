@@ -15,11 +15,27 @@ class FrontendUserController extends Controller
     public function register(Request $request){
 
     }
-    public function loginAsStudent(Request $request){
-        if(Auth::attempt($request->all())){
+    public function login(Request $request){
+        //dd($request);
+        if(Auth::attempt([
+            'email' => $request['email'],
+            'password' => $request['password'],
+            'is_student' => 1,
+        ])){
+
             dd('hello');
         }
-        else dd('false');
+        else if(
+            Auth::attempt([
+                'email' => $request['email'],
+                'password' => $request['password'],
+                'is_lecturer' => 1
+            ])){
+            dd('hello lecturer');
+        }
+        else{
+            dd('false');
+        }
     }
     public function loginAsTeacher(Request $request){
 

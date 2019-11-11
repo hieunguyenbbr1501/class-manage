@@ -14,10 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::post('/student/login.html','Frontend\FrontendUserController@loginAsStudent');
-Route::get('/lecturer/login.html', 'Frontend\FrontendUserController@loginAsLecturer');
+Route::post('/login.html','Frontend\FrontendUserController@login');
 Route::group(['middleware' => ['checkLogin']],function (){
-    Route::get('student/dashboard','Frontend\FrontendUserController@index');
+    Route::get('student/dashboard','Frontend\StudentController@index');
+});
+Route::group(['middleware' => ['checkLoginForLecturer']],function (){
+    Route::get('lecturer/dashboard', 'Frontend\FrontendController@index');
 });
 Route::get('/test','Frontend\HomeController@index');
 Route::get('api/subject', 'App\Http\Controllers\Api\SubjectController@index');
