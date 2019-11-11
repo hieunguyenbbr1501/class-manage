@@ -15,7 +15,7 @@ class CheckLoginForLecturer
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->user() && auth()->user()->isLecturer){
+        if(auth()->user() && auth()->user()->is_lecturer == 1){
             return $next($request);
 
         }

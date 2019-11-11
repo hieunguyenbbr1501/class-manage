@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FrontendUserController extends Controller
 {
@@ -15,8 +16,10 @@ class FrontendUserController extends Controller
 
     }
     public function loginAsStudent(Request $request){
-
-        dd('hello');
+        if(Auth::attempt($request->all())){
+            dd('hello');
+        }
+        else dd('false');
     }
     public function loginAsTeacher(Request $request){
 

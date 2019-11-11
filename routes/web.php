@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/student/login.html','Frontend\FrontendUserController@loginAsStudent');
+Route::post('/student/login.html','Frontend\FrontendUserController@loginAsStudent');
 Route::get('/lecturer/login.html', 'Frontend\FrontendUserController@loginAsLecturer');
 Route::group(['middleware' => ['checkLogin']],function (){
     Route::get('student/dashboard','Frontend\FrontendUserController@index');

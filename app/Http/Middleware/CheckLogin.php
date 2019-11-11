@@ -15,12 +15,12 @@ class CheckLogin
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->user() && auth()->user()->isStudent()){
+        //if(auth()->user() && auth()->user()->is_student == 1){
             return $next($request);
-        }
-        else{
-            dd('not authorized');
-
-        }
+        //}
+//        else{
+//            dd('not authorized');
+//
+//        }
     }
 }
