@@ -13,14 +13,11 @@ class CheckLoginForLecturer
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $guard="lecturer")
     {
-        if(auth()->user() && auth()->user()->is_lecturer == 1){
-            return $next($request);
-
+        if(!auth()->guard($guard)->check()) {
+            return redirect(route('teacher.login'));
         }
-        else{
-            dd('not authorized');
-        }
+        return $next($request);
     }
 }
