@@ -5,10 +5,12 @@ namespace App\Imports;
 use App\User;
 use Illuminate\Validation\Rule;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithBatchInserts;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\WithMapping;
 use Maatwebsite\Excel\Concerns\WithValidation;
 
-class UsersImport implements ToModel,WithValidation,WithHeadingRow
+class UsersImport implements ToModel,WithValidation,WithHeadingRow,WithBatchInserts,WithMapping
 {
     /**
     * @param array $row
@@ -31,6 +33,19 @@ class UsersImport implements ToModel,WithValidation,WithHeadingRow
         // TODO: Implement rules() method.
         return[
         'name' => 'required'
+        ];
+    }
+    public function batchSize(): int
+    {
+        // TODO: Implement batchSize() method.
+        return 10;
+    }
+    public function map($row): array
+    {
+        // TODO: Implement map() method.
+        return[
+            'name' => 'B1',
+            'email' => 'B2'
         ];
     }
 }
