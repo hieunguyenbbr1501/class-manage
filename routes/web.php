@@ -25,3 +25,7 @@ Route::get('/test','Frontend\HomeController@index');
 Route::get('api/subject', 'App\Http\Controllers\Api\SubjectController@index');
 Route::get('api/subject/{id}', 'App\Http\Controllers\Api\SubjectController@show');
 
+Route::get('export', 'MyController@export')->name('export');
+Route::get('importExportView', 'MyController@importExportView');
+Route::post('import', 'MyController@import')->name('import');
+Route::get('toarray','MyController@toArray');
