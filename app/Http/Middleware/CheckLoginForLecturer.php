@@ -16,7 +16,7 @@ class CheckLoginForLecturer
     public function handle($request, Closure $next, $guard="lecturer")
     {
         if(!auth()->guard($guard)->check()) {
-            return redirect(route('teacher.login'));
+            return redirect(route('lecturer.login'));
         }
         return $next($request);
     }

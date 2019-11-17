@@ -13,14 +13,11 @@ class CheckLogin
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $guard="student")
     {
-        //if(auth()->user() && auth()->user()->is_student == 1){
-            return $next($request);
-        //}
-//        else{
-//            dd('not authorized');
-//
-//        }
+        if(!auth()->guard($guard)->check()) {
+            return redirect(route('student.login.get'));
+        }
+        return $next($request);
     }
 }

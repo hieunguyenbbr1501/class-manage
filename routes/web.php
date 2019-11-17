@@ -14,12 +14,33 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::post('/login.html','Frontend\FrontendUserController@login');
+Route::get('student/login.html',[
+    'uses' => 'StudentLoginController@showLoginForm',
+    'as' => 'student.login.get'
+]);
+Route::post('student/login-attempt.html',[
+    'uses' => 'StudentLoginController@login',
+    'as' => 'student.login.post'
+]);
+Route::get('lecturer/login.html',[
+    'uses' => 'LecturerLoginController@showLoginForm',
+    'as' => 'lecturer.login.get'
+]);
+Route::post('lecturer/login-attempt.html',[
+    'uses' => 'LecturerLoginController@login',
+    'as' => 'lecturer.login.post'
+]);
 Route::group(['middleware' => ['checkLogin']],function (){
-    Route::get('student/dashboard','Frontend\StudentController@index');
+    Route::get('student/dashboard',[
+        'uses' => 'StudentController@index',
+        'as' => 'student.dashboard'
+    ]);
 });
 Route::group(['middleware' => ['checkLoginForLecturer']],function (){
-    Route::get('lecturer/dashboard', 'Frontend\FrontendController@index');
+    Route::get('lecturer/dashboard', [
+        'uses' => 'LecturerController@index',
+        'as' => 'lecturer.dashboard'
+    ]);
 });
 Route::get('/test','Frontend\HomeController@index');
 Route::get('api/subject', 'App\Http\Controllers\Api\SubjectController@index');

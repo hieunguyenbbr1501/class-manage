@@ -20,13 +20,13 @@ class UsersImport implements ToModel,WithValidation,WithHeadingRow,WithBatchInse
     public function model(array $row)
     {
         return new User([
-            'name'     => $row['name'],
-            'email'    => $row['email'],
+            'name'     => $row['Tên'],
+            'email'    => $row['Địa chỉ'],
             'password' => \Hash::make('123456'),
         ]);
     }
     public function headingRow(){
-        return 2;
+        return 1;
     }
     public function rules(): array
     {
@@ -42,10 +42,11 @@ class UsersImport implements ToModel,WithValidation,WithHeadingRow,WithBatchInse
     }
     public function map($row): array
     {
+        dd($row);
         // TODO: Implement map() method.
         return[
-            'name' => 'B1',
-            'email' => 'B2'
+            'name' => $row['Tên'],
+            'email' => $row['Địa chỉ']
         ];
     }
 }

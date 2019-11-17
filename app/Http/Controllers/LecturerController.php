@@ -29,6 +29,7 @@ class LecturerController extends Controller
     public function index()
     {
         //
+        dd('dashboard');
     }
 
     /**

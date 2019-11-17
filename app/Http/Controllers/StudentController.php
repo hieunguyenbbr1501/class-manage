@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Session;
 
 class StudentController extends Controller
 {
@@ -14,7 +16,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        dd(Session::all());
+        dd('dashboard');
+
     }
 
     /**

@@ -9,7 +9,7 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
 use Maatwebsite\Excel\Concerns\WithMultipleSheets;
 
-class UsersExport implements FromCollection, WithHeadings, WithMapping,WithMultipleSheets
+class UsersExport implements FromQuery, WithHeadings, WithMapping,WithMultipleSheets
 {
     /**
      * @return \Illuminate\Support\Collection
@@ -21,7 +21,9 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping,WithMulti
 
     public function query()
     {
+        //
         return User::query()->where('name', 'Like', '%admin%');
+        //return User::query();
     }
 
     public function headings(): array
