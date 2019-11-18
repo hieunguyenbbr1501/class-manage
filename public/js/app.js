@@ -51343,8 +51343,8 @@ if (document.getElementById('example')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\admin\PhpstormProjects\untitled\class-management\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\admin\PhpstormProjects\untitled\class-management\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\tailieu\coder\phat trien ung dung web\projects\class-manage\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\tailieu\coder\phat trien ung dung web\projects\class-manage\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
