@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Student;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class StudentController extends Controller
@@ -17,7 +18,6 @@ class StudentController extends Controller
     public function index()
     {
         dd(Session::all());
-        dd('dashboard');
 
     }
 
@@ -48,9 +48,11 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $student)
+    public function show($id = null)
     {
         //
+        $student_detail = Student::where('id',$id)->firstOrFail();
+        dd($student_detail);
     }
 
     /**

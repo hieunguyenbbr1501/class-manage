@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class StudentLoginController extends Controller
 {
@@ -26,7 +27,7 @@ class StudentLoginController extends Controller
     }
     public function login(Request $request){
         if (Auth::guard('student')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-            //dd(true);
+            $request->session()->put('student_id' ,$request['email']);
             return redirect(route('student.dashboard'));
         }
         return redirect(route('student.login.get'));
