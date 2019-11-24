@@ -35,6 +35,11 @@ Route::group(['middleware' => ['checkLogin']],function (){
         'uses' => 'StudentController@index',
         'as' => 'student.dashboard'
     ]);
+    Route::get('student/enrol/{id}',
+        [
+            'uses' => 'StudentController@enrol',
+            'as' => 'student.enrol',
+        ]);
 });
 Route::group(['middleware' => ['checkLoginForLecturer']],function (){
     Route::get('lecturer/dashboard', [
@@ -50,3 +55,6 @@ Route::get('export', 'MyController@export')->name('export');
 Route::get('importExportView', 'MyController@importExportView');
 Route::post('import', 'MyController@import')->name('import');
 Route::get('toarray','MyController@toArray');
+Route::get('/test',function (){
+    dd(true);
+})->middleware('auth');

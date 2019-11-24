@@ -10,6 +10,13 @@ use Illuminate\Support\Facades\Session;
 class StudentLoginController extends Controller
 {
     //
+    protected $user;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     use Authenticatable;
     protected $redirectTo = '/student/dashboard';
     public function __construct()
@@ -27,7 +34,8 @@ class StudentLoginController extends Controller
     }
     public function login(Request $request){
         if (Auth::guard('student')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-            $request->session()->put('student_id' ,$request['email']);
+
+            $request->session()->put('email' ,$request['email']);
             return redirect(route('student.dashboard'));
         }
         return redirect(route('student.login.get'));

@@ -38,7 +38,7 @@ class Term extends Model
         return $this->belongsTo(Year::class,'year','name');
     }
     public function courses(){
-        return $this->hasMany(Course::class);
+        return $this->hasMany(Course::class,'term_id');
     }
     /*
     |--------------------------------------------------------------------------
