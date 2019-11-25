@@ -51,4 +51,15 @@ Route::get('importExportView', 'MyController@importExportView');
 Route::post('import', 'MyController@import')->name('import');
 Route::get('toarray','MyController@toArray');
 
+//test of Duy
+Route::get('homestay',function (){
+    return view('trungduy/home');
+});
+Route::get('postdoc',function (){
+    return view('trungduy/postDocument');
+});
+Route::get('login',function(){
+    return view('trungduy/login');
+});
+
 
