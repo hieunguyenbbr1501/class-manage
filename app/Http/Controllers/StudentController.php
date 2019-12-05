@@ -24,16 +24,16 @@ class StudentController extends Controller
         //dd(Session::all());
         $student = Student::where('email', Session::get('email'))->firstOrFail();
         Auth::setUser($student);
-        dd(Auth::user()->courses()->get());
+        //dd(Auth::user()->courses()->get());
         $month = Carbon::now()->month;
         $year = Carbon::now()->year;
         if ($month > 10) {
             $scholar_year = Year::where('start', $year)->firstOrFail();
             $term = Term::where('order', 'first')->where('year', $scholar_year->name)->firstOrFail();
             $courses = $term->courses()->get();
-            dd($courses);
+            //dd($courses);
         }
-
+        return view('trungduy.home');
         $taken_courses = Auth::user()->courses()->get();
 
     }
@@ -78,7 +78,7 @@ class StudentController extends Controller
         //dd($course);
     }
 
-    public function edit(Request $request)
+    public function editProfile(Request $request)
     {
         //
 

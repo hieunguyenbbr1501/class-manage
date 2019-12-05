@@ -19,7 +19,7 @@ class LecturerLoginController extends Controller
     }
     public function guard()
     {
-        return Auth::guard('lectuer');
+        return Auth::guard('lecturer');
     }
 
     public function showLoginForm()
@@ -28,7 +28,7 @@ class LecturerLoginController extends Controller
     }
     public function login(Request $request){
         if (Auth::guard('lecturer')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-            //dd(true);
+            $request->session()->put('lecturer_email' ,$request['email']);
             return redirect(route('lecturer.dashboard'));
         }
         return redirect(route('lecturer.login.get'));

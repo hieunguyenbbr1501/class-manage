@@ -3,8 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Lecturer;
+use App\Models\Lecture;
+use App\Models\Term;
+use App\Models\Year;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LecturerController extends Controller
 {
@@ -29,6 +35,18 @@ class LecturerController extends Controller
     public function index()
     {
         //
+        $Lecturer = Lecturer::where('email', Session::get('lecturer_email'))->firstOrFail();
+        Auth::setUser($Lecturer);
+        dd(Auth::user());
+        //dd(Auth::user()->courses()->get());
+        $month = Carbon::now()->month;
+        $year = Carbon::now()->year;
+        if ($month > 10) {
+            $scholar_year = Year::where('start', $year)->firstOrFail();
+            $term = Term::where('order', 'first')->where('year', $scholar_year->name)->firstOrFail();
+            $courses = $term->courses()->get();
+            dd($courses);
+        }
         dd('dashboard');
     }
 
