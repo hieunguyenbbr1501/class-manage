@@ -28,7 +28,7 @@
                 <div>
                     <a href="" class="bell-mess"><i class="fas fa-comments fa-2x"></i></a>
                 </div>
-                <div style="margin-left: 10px;margin-right: 10px" class="dropdown">
+                <div style="" class="dropdown">
                     <a href="" class="dropbtn">
                         <span>
                             <span>Nguyễn Trung Duy</span>

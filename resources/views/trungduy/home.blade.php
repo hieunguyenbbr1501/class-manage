@@ -131,7 +131,32 @@
                                 <span class="make-color">Tin tức chung</span>
                             </a>
                         </li>
-
+                        <li>
+                            <span class="allsub">
+                                <span ><i class="fas fa-caret-right"></i></span>
+                                <span class="make-color">Các khóa học của tôi</span>
+                            </span>
+                            <ul class="display-sub">
+                                <li>
+                                    <a href="">
+                                        <span><i class="fas fa-book-reader"></i></span>
+                                        <span class="make-color">INT2202</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span><i class="fas fa-book-reader"></i></span>
+                                        <span class="make-color">INT2202</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span><i class="fas fa-book-reader"></i></span>
+                                        <span class="make-color">INT2202</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -147,5 +172,12 @@
         <div><a href="">Trang chủ</a></div>
     </div>
 </footer>
+<script>
+    var listsub = document.querySelector(".allsub");
+    var list = document.querySelector(".display-sub");
+    listsub.addEventListener("click", () => {
+        list.classList.toggle("show");
+    });
+</script>
 </body>
 </html>
