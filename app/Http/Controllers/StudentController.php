@@ -33,8 +33,8 @@ class StudentController extends Controller
             $courses = $term->courses()->get();
             //dd($courses);
         }
-        return view('trungduy.home');
         $taken_courses = Auth::user()->courses()->get();
+        return view('trungduy.home',compact('term','courses','taken_courses'));
 
     }
 
