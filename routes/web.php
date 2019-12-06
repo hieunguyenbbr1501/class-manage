@@ -65,5 +65,9 @@ Route::get('my',function (){
 Route::get('searchsub',function (){
     return view('trungduy/searchSubjects');
 });
+Route::get('changepassword',function (){
+    return view('trungduy/changePassword');
+});
+
 
 
