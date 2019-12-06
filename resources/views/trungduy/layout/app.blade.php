@@ -50,5 +50,12 @@
 <main>
     @yield('content')
 </main>
+<footer class="page-footer">
+    <div style="margin-top: 1em">
+        <div>Trường Đại học Công Nghệ - ĐHQGHN</div>
+        <div>Bạn đã đăng nhập với tên (<a href="">Nguyễn Trung Duy</a>)</div>
+        <div><a href="">Trang chủ</a></div>
+    </div>
+</footer>
 </body>
 </html>
