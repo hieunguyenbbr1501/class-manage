@@ -62,5 +62,8 @@ Route::get('home',function (){
 Route::get('my',function (){
     return view('trungduy/my');
 });
+Route::get('searchsub',function (){
+    return view('trungduy/searchSubjects');
+});
 
 
