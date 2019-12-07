@@ -126,9 +126,9 @@
                 <div>
                     <ul>
                         <li>
-                            <a href="" >
+                            <a href="" class="make-color">
                                 <span><i class="far fa-newspaper"></i></span>
-                                <span class="make-color">Tin tức chung</span>
+                                <span>Tin tức chung</span>
                             </a>
                         </li>
                         <li>

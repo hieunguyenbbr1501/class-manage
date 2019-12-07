@@ -1,6 +1,7 @@
 @extends('trungduy/layout.app')
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/head.css') }}">
+{{--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >--}}
     <style>
         .search
         {
@@ -19,17 +20,47 @@
     </style>
 @endsection
 @section('content')
-    <div>
-        <h1 style="text-align: center">Website môn học</h1>
-        <div style="text-align:center">
-            <label style="">Tìm kiếm khóa học: </label>
-            <input class="search" type="text" placeholder="Search" style="">
-            <input type="button" value="Xem" class="Xem"  style="">
-        </div>
-    </div>
+
     <div style="display: flex;margin-right: 10px;margin-left: 10px">
         <div class="news" style="width: 70%">
-            <h3>Kết quả tìm kiếm: <span>1</span></h3>
+
+            <div>
+                <div class="header"></div>
+                <div>
+                    <div>
+                        <div class="card-deck" style="display: flex; overflow-x: scroll">
+                            <div class="card text-white">
+                                <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV-XL-dvaC-cblm2rqA7am9z2-54v_mGnaLDokhZQqEJbXFduZng" alt="Card image top">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title">Card title</h3>
+                                    <p class="card-text">This is a Card example</p>
+                                </div>
+                            </div>
+                            <div class="card text-white">
+                                <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV-XL-dvaC-cblm2rqA7am9z2-54v_mGnaLDokhZQqEJbXFduZng" alt="Card image top">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title">Card title</h3>
+                                    <p class="card-text">This is a Card example</p>
+                                </div>
+                            </div>
+                            <div class="card text-white">
+                                <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV-XL-dvaC-cblm2rqA7am9z2-54v_mGnaLDokhZQqEJbXFduZng" alt="Card image top">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title">Card title</h3>
+                                    <p class="card-text">This is a Card example</p>
+                                </div>
+                            </div>
+                            <div class="card text-white">
+                                <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV-XL-dvaC-cblm2rqA7am9z2-54v_mGnaLDokhZQqEJbXFduZng" alt="Card image top">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title">Card title</h3>
+                                    <p class="card-text">This is a Card example</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
         <div style="width: 30%" >
@@ -51,4 +82,8 @@
 
         </div>
     </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 @endsection
