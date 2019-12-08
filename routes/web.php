@@ -68,6 +68,14 @@ Route::get('searchsub',function (){
 Route::get('changepassword',function (){
     return view('trungduy/changePassword');
 });
+Route::get('homes',function (){
+    return view('trungduy/homes');
+});
+Route::get('subdetail',function (){
+    return view('trungduy/subdetail');
+});
+
+
 
 
 
