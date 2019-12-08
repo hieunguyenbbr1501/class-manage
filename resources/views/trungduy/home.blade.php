@@ -137,24 +137,15 @@
                                 <span class="make-color">Các khóa học của tôi</span>
                             </span>
                             <ul class="display-sub">
+                                @foreach($taken_courses as $course)
                                 <li>
                                     <a href="">
                                         <span><i class="fas fa-book-reader"></i></span>
-                                        <span class="make-color">INT2202</span>
+                                        <span class="make-color">{{ $course->code }}</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="">
-                                        <span><i class="fas fa-book-reader"></i></span>
-                                        <span class="make-color">INT2202</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <span><i class="fas fa-book-reader"></i></span>
-                                        <span class="make-color">INT2202</span>
-                                    </a>
-                                </li>
+                                @endforeach
+
                             </ul>
                         </li>
                     </ul>

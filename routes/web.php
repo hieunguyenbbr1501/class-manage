@@ -66,5 +66,8 @@ Route::get('postdoc',function (){
 Route::get('login',function(){
     return view('trungduy/login');
 });
+Route::get('test',function (){
+    return view('trungduy.my');
+});
 
 
