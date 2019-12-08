@@ -91,6 +91,33 @@
                 </div>
 
             </article>
+            <article style="" class="article-news">
+                <div class="section">
+                    <header class="header">
+                        <div class="left-picture">
+                            <a href="" class="pic-left"><img class="ava" src="https://www.upsieutoc.com/images/2019/11/23/Nancy-Momoland-MrCong.com-031.jpg" alt=""></a>
+                        </div>
+                        <div>
+                            <div>Triển khai giao diện tiếng Bồ Đào Nha</div>
+                            <address style="margin-bottom: 20px">Bởi
+                                <a href="" style="color: #0B90C4">Quản trị viên</a> -
+                                <time> 12hAM</time>
+                            </address>
+                        </div>
+                    </header>
+                    <div>
+                        <div style="" class="left-picture"></div>
+                        <div style="margin-left: 50px">
+                            <p style="margin-bottom: 10px">Chào các em,</p>
+                            <p>
+                                Hôm nay tôi chỉ dạy đến đây thôi
+                            </p>
+                            <a href="" style="color: #0B90C4">Xem tiếp nội dung chủ đề này</a>
+                        </div>
+                    </div>
+                </div>
+
+            </article>
         </div>
         <div style="width: 30%" >
             <div style="background-color: #f8f8f8;" class="naviga">
@@ -99,12 +126,37 @@
                 <div>
                     <ul>
                         <li>
-                            <a href="" >
+                            <a href="" class="make-color">
                                 <span><i class="far fa-newspaper"></i></span>
-                                <span class="make-color">Tin tức chung</span>
+                                <span>Tin tức chung</span>
                             </a>
                         </li>
-
+                        <li>
+                            <span class="allsub">
+                                <span ><i class="fas fa-caret-right"></i></span>
+                                <span class="make-color">Các khóa học của tôi</span>
+                            </span>
+                            <ul class="display-sub">
+                                <li>
+                                    <a href="">
+                                        <span><i class="fas fa-book-reader"></i></span>
+                                        <span class="make-color">INT2202</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span><i class="fas fa-book-reader"></i></span>
+                                        <span class="make-color">INT2202</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span><i class="fas fa-book-reader"></i></span>
+                                        <span class="make-color">INT2202</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -112,5 +164,20 @@
         </div>
     </div>
 </main>
+
+<footer class="page-footer">
+    <div style="margin-top: 1em">
+        <div>Trường Đại học Công Nghệ - ĐHQGHN</div>
+        <div>Bạn chưa đăng nhập (<a href="">Đăng nhập</a>)</div>
+        <div><a href="">Trang chủ</a></div>
+    </div>
+</footer>
+<script>
+    var listsub = document.querySelector(".allsub");
+    var list = document.querySelector(".display-sub");
+    listsub.addEventListener("click", () => {
+        list.classList.toggle("show");
+    });
+</script>
 </body>
 </html>

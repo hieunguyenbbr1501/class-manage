@@ -28,7 +28,7 @@
                 <div>
                     <a href="" class="bell-mess"><i class="fas fa-comments fa-2x"></i></a>
                 </div>
-                <div style="margin-left: 10px;margin-right: 10px" class="dropdown">
+                <div style="" class="dropdown">
                     <a href="" class="dropbtn">
                         <span>
                             <span>Nguyễn Trung Duy</span>
@@ -50,5 +50,12 @@
 <main>
     @yield('content')
 </main>
+<footer class="page-footer">
+    <div style="margin-top: 1em">
+        <div>Trường Đại học Công Nghệ - ĐHQGHN</div>
+        <div>Bạn đã đăng nhập với tên (<a href="">Nguyễn Trung Duy</a>)</div>
+        <div><a href="">Trang chủ</a></div>
+    </div>
+</footer>
 </body>
 </html>

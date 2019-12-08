@@ -8,7 +8,7 @@
             height: 30px;
             width: auto;
             border-radius: 4px;
-            border:1px solid #CCCCCC
+            border:1px solid #CCCCCC;
         }
         .Xem
         {
@@ -119,8 +119,8 @@
         <div style="width: 30%" class="navigati">
             <div style="background-color: #f8f8f8;" class="naviga">
                 <h2>Navigation</h2>
-                <a href="" class="make-color">Nhà của tôi</a>
                 <div>
+                    <a href="" class="make-color">Nhà của tôi</a>
                     <ul style="list-style: none">
                         <li>
                             <a href="" >
@@ -129,30 +129,30 @@
                             </a>
                         </li>
                         <li>
-                            <a href="" class="allsub" >
-                                <span><i class="fas fa-caret-down"></i></span>
+                            <span class="allsub">
+                                <span ><i class="fas fa-caret-right"></i></span>
                                 <span class="make-color">Các khóa học của tôi</span>
-                                <ul class="display-sub">
-                                    <li>
-                                        <a href="">
-                                            <span><i class="fas fa-book-reader"></i></span>
-                                            <span class="make-color">INT2202</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <span><i class="fas fa-book-reader"></i></span>
-                                            <span class="make-color">INT2202</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <span><i class="fas fa-book-reader"></i></span>
-                                            <span class="make-color">INT2202</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </a>
+                            </span>
+                            <ul class="display-sub">
+                                <li>
+                                    <a href="">
+                                        <span><i class="fas fa-book-reader"></i></span>
+                                        <span class="make-color">INT2202</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span><i class="fas fa-book-reader"></i></span>
+                                        <span class="make-color">INT2202</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span><i class="fas fa-book-reader"></i></span>
+                                        <span class="make-color">INT2202</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -161,10 +161,13 @@
         </div>
     </div>
     <script>
-        var listSub = document.getElementsByClassName("display-sub");
-        var allsub = document.getElementsByClassName("allsub");
-        allsub.addEventListener("click", () => {
-            listSub.parentElement.style.display= "block";
-        })
+
+        var listsub = document.querySelector(".allsub");
+        var list = document.querySelector(".display-sub");
+        listsub.addEventListener("click", () => {
+            list.classList.toggle("show");
+        });
+
+
     </script>
 @endsection
