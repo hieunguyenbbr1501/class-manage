@@ -65,6 +65,49 @@
     cursor: pointer;
 }
 /*.open*/
+/*scroll*/
+.news
+{
+    margin:10px;
+}
+.block-courses-recently
+{
+    background-color: #f8f8f8;
+    padding: 5px;
+    border: 2px solid #ddd;
+    margin-bottom: 20px;
+
+}
+.header-courses
+{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+.row
+{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.card-img-overlay
+{
+    margin:10px;
+}
+.allsubs
+{
+    border: 2px solid #95918F;
+    padding: 5px;
+}
+.allsubs:hover
+{
+    cursor: pointer;
+    border: 2px solid #0B90C4;
+    transition: 0.3s;
+}
+.shows
+{
+    display:none;
+}
 /*{*/
 /*    background-color: white !important;*/
 /*}*/
