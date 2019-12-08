@@ -19,77 +19,7 @@
             border: 1px solid #cccccc;
         }
 
-        .post-pagination {
-            margin-top:40px;
-            text-align:center;
-        }
 
-        .post-pagination .pages {
-            display:inline-block;
-        }
-
-        .post-pagination .pages li {
-            display:inline-block;
-        }
-
-        .post-pagination .pages li + li {
-            margin-left:10px;
-        }
-
-        .post-pagination .pages li {
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            border-radius: 50%;
-            background-color: #EBEBEB;
-            -webkit-transition: 0.2s all;
-            transition: 0.2s all;
-        }
-
-        .post-pagination .pages li a {
-            display:block;
-            -webkit-transition: 0.2s color;
-            transition: 0.2s color;
-        }
-
-        .post-pagination .pages li:hover  , .post-pagination .pages li.active {
-            background-color: #0B90C4;
-            color:black;
-        }
-
-        .post-pagination .pages li:hover a {
-            color:#FFF;
-        }
-
-        .pagination-back , .pagination-next {
-            display: block;
-            text-align: center;
-            border-radius: 40px;
-            background-color: #EBEBEB;
-            -webkit-transition: 0.2s all;
-            transition: 0.2s all;
-            height:40px;
-            padding:0px 30px;
-            line-height:40px;
-        }
-
-        .pagination-next:hover  , .pagination-back:hover  {
-            color:black;
-            background-color:#0B90C4;
-        }
-
-        .pagination-next:after {
-            content:"\f178";
-            font-family:FontAwesome;
-            margin-left:15px;
-        }
-
-        .pagination-back:before {
-            content:"\f177";
-            font-family:FontAwesome;
-            margin-right:15px;
-        }
     </style>
 @endsection
 @section('content')
@@ -273,18 +203,44 @@
         <div style="width: 30%" >
             <div style="background-color: #f8f8f8;" class="naviga">
                 <h2>Navigation</h2>
-                <a href="" class="make-color">Trang chủ</a>
                 <div>
+                    <a href="" class="make-color">Nhà của tôi</a>
                     <ul style="list-style: none">
                         <li>
                             <a href="" >
-                                <span><i class="far fa-newspaper"></i></span>
-                                <span class="make-color">Tin tức chung</span>
+                                <span><i class="fas fa-home"></i></span>
+                                <span class="make-color">Trang chủ hệ thống</span>
                             </a>
                         </li>
-
+                        <li>
+                            <span class="allsub" style="border: none">
+                                <span ><i class="fas fa-caret-right"></i></span>
+                                <span class="make-color">Các khóa học của tôi</span>
+                            </span>
+                            <ul class="display-sub">
+                                <li>
+                                    <a href="">
+                                        <span><i class="fas fa-book-reader"></i></span>
+                                        <span class="make-color">INT2202</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span><i class="fas fa-book-reader"></i></span>
+                                        <span class="make-color">INT2202</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span><i class="fas fa-book-reader"></i></span>
+                                        <span class="make-color">INT2202</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
+            </div>
             </div>
 
         </div>
