@@ -1,0 +1,139 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+.navbar-inner
+{
+    padding: 5px;
+    border-bottom: 1px ridge;
+}
+.head
+{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.nav-home
+{
+    font-size: 20px;
+}
+.nav-home:hover
+{
+    text-decoration: none;
+}
+.section
+{
+    margin-left: 5px;
+    /*background-color: #ccccc;*/
+    padding-top:5px;
+}
+.header
+{
+    height: 50px;
+    margin-bottom: 3px;
+    position: relative;
+}
+.ava
+{
+    height: 40px;
+    width: 40px;
+}
+.left-picture
+{
+    float: left;
+}
+.pic-left
+{
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.article-news:hover
+{
+    border-radius: 4px;
+    border: 1px solid #0B90C4;
+    transition: 0.4s;
+}
+.article-news
+{
+    background-color: #f8f8f8;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.dropdown
+{
+    cursor: pointer;
+}
+/*.open*/
+/*{*/
+/*    background-color: white !important;*/
+/*}*/
+.make-color
+{
+    color: #0b4d75;
+
+}
+.naviga:hover
+{
+    border:1px solid #0B90C4;
+    border-radius: 4px;
+}
+.naviga
+{
+    padding:10px;
+}
+.make-color:hover
+{
+    text-decoration: none;
+}
+.bucminh:hover
+{
+    text-decoration: none;
+}
+ul
+{
+    list-style: none;
+}
+.search
+{
+    height: 30px;
+    width: auto;
+    border-radius: 4px;
+    border:1px solid #CCCCCC;
+}
+.Xem
+{
+    height: 30px;
+    width:50px;
+    background-color: #f5f5f5;
+    border: 1px solid #cccccc;
+}
+.navigation
+{
+    float: right;
+    /*background-color: green;*/
+}
+/*show subject*/
+.allsub:hover
+{
+    cursor: pointer;
+}
+.display-sub
+{
+    display: none;
+    margin-left: 18px;
+    /*display: none;*/
+
+}
+
+.show{
+    display: block;
+}
+/*foooter*/
+.page-footer
+{
+    text-align: center;
+    border-top: 2px solid #ddd;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
