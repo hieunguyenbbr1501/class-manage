@@ -204,7 +204,7 @@
                             <ul class="display-sub">
                                 @foreach($taken_courses as $course)
                                 <li>
-                                    <a href="">
+                                    <a href="{{ route('student.course.detail',['id' => $course->id]) }}">
                                         <span><i class="fas fa-book-reader"></i></span>
                                         <span class="make-color">{{ $course->code }}</span>
                                     </a>

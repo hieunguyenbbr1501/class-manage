@@ -70,7 +70,7 @@ class YearCrudController extends CrudController
     {
         // your additional operations before save here
 
-        $redirect_location = $this->traitUpdate($request);
+        $redirect_location = $this->traitStore();
         // ..
         return $redirect_location;
     }

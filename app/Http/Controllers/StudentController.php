@@ -45,13 +45,14 @@ class StudentController extends Controller
      */
     public function courseDetail($id)
     {
+        $student = Student::where('email', Session::get('email'))->firstOrFail();
+        Auth::setUser($student);
         $course = Course::findOrFail($id);
-        if (Auth::user()->courses()->contains($course)) {
-            dd(true);
-        } else {
-
+        if (Auth::user()->courses->contains($course)) {
+            dd($course->lectures()->get());
+            dd($course);
         }
-        dd($course);
+        dd('need to enrol');
     }
 
     public function enrol($id)

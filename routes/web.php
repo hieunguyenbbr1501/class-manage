@@ -40,6 +40,10 @@ Route::group(['middleware' => ['checkLogin']],function (){
             'uses' => 'StudentController@enrol',
             'as' => 'student.enrol',
         ]);
+    Route::get('student/course/{id}',[
+        'uses' => 'StudentController@courseDetail',
+        'as' => 'student.course.detail'
+    ]);
 });
 Route::group(['middleware' => ['checkLoginForLecturer']],function (){
     Route::get('lecturer/dashboard', [

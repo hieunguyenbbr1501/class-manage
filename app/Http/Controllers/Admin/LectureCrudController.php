@@ -39,7 +39,7 @@ class LectureCrudController extends CrudController
         $this->crud->setValidation(LectureRequest::class);
 
         // TODO: remove setFromDb() and manually define Fields
-        $this->crud->setFromDb();
+        $this->addFields();
     }
 
     protected function setupUpdateOperation()
@@ -50,7 +50,7 @@ class LectureCrudController extends CrudController
     {
         // your additional operations before save here
 
-        $redirect_location = parent::storeCrud($request);
+        $redirect_location = $this->traitStore();
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;
@@ -59,9 +59,30 @@ class LectureCrudController extends CrudController
     public function update(UpdateRequest $request)
     {
         // your additional operations before save here
-        $redirect_location = parent::updateCrud($request);
+        $redirect_location = $this->traitStore();
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;
+    }
+
+    public function addFields(){
+        $this->crud->addField([
+            'label' => 'Course',
+            'type' => 'select2',
+            'name' => 'course_id',
+            'entity' => 'course',
+            'model' => 'App\Models\Course',
+            'attribute' => 'id',
+        ]);
+        $this->crud->addField([
+            'label' => 'Week',
+            'type' => 'number',
+            'name' => 'week'
+        ]);
+        $this->crud->addField([
+            'label' => 'document',
+            'type' => 'upload',
+            'name' => 'path'
+        ]);
     }
 }
