@@ -49,7 +49,7 @@ class LectureCrudController extends CrudController
     public function store(StoreRequest $request)
     {
         // your additional operations before save here
-
+        //dd($request->request);
         $redirect_location = $this->traitStore();
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
@@ -80,9 +80,12 @@ class LectureCrudController extends CrudController
             'name' => 'week'
         ]);
         $this->crud->addField([
-            'label' => 'document',
+            'label' => 'Document',
+            'type' => 'browse',
             'type' => 'upload',
-            'name' => 'path'
+            'upload' => true,
+            //'disk' => 'uploads',
+            'name' => 'doc_upload'
         ]);
     }
 }
