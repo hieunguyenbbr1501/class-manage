@@ -73,5 +73,13 @@ Route::get('login',function(){
 Route::get('test',function (){
     return view('trungduy.my');
 });
+Route::get('homes',function (){
+    return view('trungduy/homes');
+});
+Route::get('subdetail',function (){
+    return view('trungduy/subdetail');
+});
+
+
 
 

@@ -1,0 +1,86 @@
+*,h2
+{
+    padding: 0;
+    margin: 0;
+}
+/*header*/
+.navbar-inner
+{
+    padding: 5px;
+    border-bottom: 1px ridge;
+}
+.head
+{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.nav-home
+{
+    font-size: 20px;
+}
+.nav-home:hover
+{
+    text-decoration: none;
+}
+/*search*/
+.search
+{
+    height: 30px;
+    width: auto;
+    border-radius: 4px;
+    border:1px solid #CCCCCC;
+}
+.Xem
+{
+    height: 30px;
+    width:50px;
+    background-color: #f5f5f5;
+    border: 1px solid #cccccc;
+}
+/*body*/
+.container
+{
+    margin-top:20px;
+}
+/*scroll*/
+.header-courses
+{
+    display: flex;
+    justify-content: space-between;
+}
+img
+{
+    height: 10rem;
+}
+
+/*content-right-body*/
+ul > li
+{
+    list-style: none;
+}
+.sidebar
+{
+    background-color: #f8f8f8;
+    padding:10px;
+}
+.gohome
+{
+    font-weight: bold;
+}
+a:hover
+{
+    text-decoration: none;
+}
+.make-color:hover
+{
+    text-decoration: underline;
+}
+.sub-content
+{
+    color: #337ab7;
+}
+.sub-content:hover
+{
+    color: #23527c;
+    cursor: pointer;
+}
