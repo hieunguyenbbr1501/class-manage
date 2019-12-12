@@ -47,7 +47,6 @@ class LecturerController extends Controller
             $courses = $term->courses()->get();
             dd($courses);
         }
-        dd('dashboard');
     }
 
     /**

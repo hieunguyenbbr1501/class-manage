@@ -48,50 +48,19 @@
                 <div>
                     <div class="display-scroll">
                         <div class="card-deck dashboard-card-deck row" style="display: flex; overflow-x: scroll">
-
+                            @foreach($courses as $course)
                             <div class="col-sm-4 card" >
                                 <div class="card text-white">
                                     <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV-XL-dvaC-cblm2rqA7am9z2-54v_mGnaLDokhZQqEJbXFduZng" alt="Card image top">
                                     <div class="card-img-overlay">
                                         <div>
-                                            <a href="" class="subs">Xác xuất thống kê</a>
+                                            <a href="{{ route('student.course.detail',['id' => $course->id]) }}" class="subs">{{ $course->code }}</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
 
-                            <div class="col-sm-4 card" >
-                                <div class="card text-white">
-                                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV-XL-dvaC-cblm2rqA7am9z2-54v_mGnaLDokhZQqEJbXFduZng" alt="Card image top">
-                                    <div class="card-img-overlay">
-                                        <div>
-                                            <a href="" class="subs">Xác xuất thống kê</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4 card" >
-                                <div class="card text-white">
-                                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV-XL-dvaC-cblm2rqA7am9z2-54v_mGnaLDokhZQqEJbXFduZng" alt="Card image top">
-                                    <div class="card-img-overlay">
-                                        <div>
-                                            <a href="" class="subs">Xác xuất thống kê</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4 card" >
-                                <div class="card text-white">
-                                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV-XL-dvaC-cblm2rqA7am9z2-54v_mGnaLDokhZQqEJbXFduZng" alt="Card image top">
-                                    <div class="card-img-overlay">
-                                        <div>
-                                            <a href="" class="subs">Xác xuất thống kê</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
                         </div>
 

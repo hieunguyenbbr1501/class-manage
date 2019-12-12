@@ -70,9 +70,10 @@
 
                 </div>
 {{--                tuan 1--}}
+                @foreach($lectures as $lecture)
                 <div class="sub-week">
                     <div>
-                        <h3 class="timesub under-link-content-left"><a href="">14 February - 20 February</a></h3>
+                        <h3 class="timesub under-link-content-left"><a href="">Tuần {{ $lecture->week }}</a></h3>
                     </div>
                     <div>
                         <div class="news-study">
@@ -92,53 +93,7 @@
                     </div>
 
                 </div>
-{{--                tuan 2--}}
-                <div class="sub-week">
-                    <div>
-                        <h3 class="timesub under-link-content-left"><a href="">14 February - 20 February</a></h3>
-                    </div>
-                    <div>
-                        <div class="news-study">
-                            <div>
-                                <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/f/spreadsheet-24" alt="">
-                                <span class="under-link-content-left"> <a href="">Giáo trình môn học</a></span>
-                            </div>
-                            <div>
-                                <button style="height: 16px;width: 16px">
-                                    {{--                                    <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/i/completion-manual-n" alt="">--}}
-                                </button>
-                            </div>
-                        </div>
-                        <div style="margin-left: 30px">
-                            <p>Đây là giáo trình môn học</p>
-                        </div>
-                    </div>
-
-                </div>
-                {{--                tuan 2--}}
-                <div class="sub-week">
-                    <div>
-                        <h3 class="timesub under-link-content-left"><a href="">14 February - 20 February</a></h3>
-                    </div>
-                    <div>
-                        <div class="news-study">
-                            <div>
-                                <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/f/spreadsheet-24" alt="">
-                                <span class="under-link-content-left"> <a href="">Giáo trình môn học</a></span>
-                            </div>
-                            <div>
-                                <button style="height: 16px;width: 16px">
-                                    {{--                                    <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/i/completion-manual-n" alt="">--}}
-                                </button>
-                            </div>
-                        </div>
-                        <div style="margin-left: 30px">
-                            <p>Đây là giáo trình môn học</p>
-                        </div>
-                    </div>
-
-                </div>
-{{--                ------}}
+                @endforeach
             </div>
             <div class="col-lg-4">
 

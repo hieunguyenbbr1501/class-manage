@@ -48,9 +48,11 @@ class StudentController extends Controller
         $student = Student::where('email', Session::get('email'))->firstOrFail();
         Auth::setUser($student);
         $course = Course::findOrFail($id);
+        $lectures = $course->lectures()->get();
         if (Auth::user()->courses->contains($course)) {
-            dd($course->lectures()->get());
-            dd($course);
+//            dd($course->lectures()->get());
+//            dd($course);
+            return view('trungduy.subDetail',compact('course','lectures'));
         }
         dd('need to enrol');
     }
