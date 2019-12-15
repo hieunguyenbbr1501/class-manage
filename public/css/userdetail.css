@@ -1,0 +1,17 @@
+*,h1,h2,h3,h4,h5,h6
+{
+    margin:0;
+    padding:0;
+}
+
+/*content left - content img avatar*/
+.img-ava
+{
+    margin-bottom: 10px;
+}
+.button-change-avatar
+{
+    display: flex;
+    justify-content: center;
+}
+/*content right  - content info user*/
