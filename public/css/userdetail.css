@@ -3,7 +3,11 @@
     margin:0;
     padding:0;
 }
-
+.container
+{
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
 /*content left - content img avatar*/
 .img-ava
 {
@@ -15,3 +19,24 @@
     justify-content: center;
 }
 /*content right  - content info user*/
+
+.user-info-header
+{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+li
+{
+    list-style: none;
+}
+.user-info-detail
+{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+dd
+{
+    margin-left: 10px;
+}
