@@ -89,6 +89,10 @@ Route::get('subdetail',function (){
     return view('trungduy/subdetail');
 });
 
+Route::get('detail',function (){
+    return view('trungduy/UserDetail');
+});
+
 
 
 
