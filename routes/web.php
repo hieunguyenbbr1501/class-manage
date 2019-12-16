@@ -78,6 +78,10 @@ Route::get('subdetail',function (){
 Route::get('detail',function (){
     return view('trungduy/UserDetail');
 });
+Route::get('editprofile',function (){
+    return view('trungduy/editProfile');
+});
+
 
 
 
