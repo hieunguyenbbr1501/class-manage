@@ -50,6 +50,16 @@ Route::group(['middleware' => ['checkLoginForLecturer']],function (){
         'uses' => 'LecturerController@index',
         'as' => 'lecturer.dashboard'
     ]);
+    Route::get('lecturer/course/{id}',[
+        'uses' => 'LecturerController@courseDetail',
+        'as' => 'lecturer.course.detail'
+    ]);
+    Route::get('lecturer/detail.html',[
+        'uses' => 'LecturerController@detail',
+        'as' => 'lecturer.detail'
+    ]);
+    Route::post('lecturer/upload/{lecture}', 'LecturerController@uploadLecture')->name('lecturer.upload');
+
 });
 Route::get('/test','Frontend\HomeController@index');
 Route::get('api/subject', 'App\Http\Controllers\Api\SubjectController@index');
@@ -57,7 +67,6 @@ Route::get('api/subject/{id}', 'App\Http\Controllers\Api\SubjectController@show'
 
 Route::get('export', 'MyController@export')->name('export');
 Route::get('importExportView', 'MyController@importExportView');
-Route::post('import', 'MyController@import')->name('import');
 Route::get('toarray','MyController@toArray');
 
 //test of Duy

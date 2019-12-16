@@ -34,7 +34,7 @@ class Lecture extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-    public function course()
+    public function courses()
     {
         return $this->belongsTo(Course::class);
     }

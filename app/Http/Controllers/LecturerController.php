@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LectureRequest;
 use App\Lecturer;
+use App\Models\Course;
 use App\Models\Lecture;
 use App\Models\Term;
 use App\Models\Year;
@@ -25,6 +27,7 @@ class LecturerController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+
     }
 
     public function guard()
@@ -37,16 +40,15 @@ class LecturerController extends Controller
         //
         $Lecturer = Lecturer::where('email', Session::get('lecturer_email'))->firstOrFail();
         Auth::setUser($Lecturer);
-        dd(Auth::user());
-        //dd(Auth::user()->courses()->get());
         $month = Carbon::now()->month;
         $year = Carbon::now()->year;
         if ($month > 10) {
             $scholar_year = Year::where('start', $year)->firstOrFail();
             $term = Term::where('order', 'first')->where('year', $scholar_year->name)->firstOrFail();
             $courses = $term->courses()->get();
-            dd($courses);
         }
+        $taken_courses = Auth::user()->courses()->get();
+        return view('lecturer.home',compact('taken_courses','courses'));
     }
 
     /**
@@ -54,6 +56,29 @@ class LecturerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function courseDetail($id){
+        $Lecturer = Lecturer::where('email', Session::get('lecturer_email'))->firstOrFail();
+        Auth::setUser($Lecturer);
+        $course = Course::findOrFail($id);
+        $lectures = $course->lectures()->get();
+        $taken_courses = Auth::user()->courses()->get();
+
+        if (Auth::user()->courses->contains($course)) {
+//            dd($course->lectures()->get());
+//            dd($course);
+            return view('lecturer.subDetail',compact('course','lectures','taken_courses'));
+        }
+        dd('need to enrol');
+    }
+
+    public function uploadLecture(Request $request){
+        dd($request);
+
+    }
+
+
+
     public function create()
     {
         //
@@ -70,6 +95,11 @@ class LecturerController extends Controller
         //
     }
 
+    public function detail(){
+        $Lecturer = Lecturer::where('email', Session::get('lecturer_email'))->firstOrFail();
+        Auth::setUser($Lecturer);
+        dd(Auth::user());
+    }
     /**
      * Display the specified resource.
      *

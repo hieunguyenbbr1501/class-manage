@@ -58,6 +58,15 @@ class CourseCrudController extends CrudController
             'model' => 'App\Models\subject',
             'attribute' => 'name'
         ]);
+        $this->crud->addField([
+            'label' => "Giảng viên ",
+            'type' => 'select2_multiple',
+            'name' => 'lecturers', // the method that defines the relationship in your Model
+            'entity' => 'lecturers', // the method that defines the relationship in your Model
+            'attribute' => 'email', // foreign key attribute that is shown to user
+            'model' => "App\Lecturer", // foreign key model
+            'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
+        ]);
     }
 
     protected function setupUpdateOperation()

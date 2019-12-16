@@ -80,6 +80,11 @@ class StudentController extends Controller
         $course = Course::find($id);
         //dd($course);
     }
+    public function detail(){
+        $student = Student::where('email', Session::get('lecturer_email'))->firstOrFail();
+        Auth::setUser($student);
+        dd(Auth::user());
+    }
 
     public function editProfile(Request $request)
     {
