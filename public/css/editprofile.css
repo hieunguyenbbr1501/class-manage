@@ -1,0 +1,53 @@
+*,h1,h2,h3,h4,h5,h6
+{
+    margin: 0;
+    padding: 0;
+}
+.container
+{
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+/*content left - edit user info - info general*/
+.user-info-general
+{
+    border-bottom: 1px solid #ddd;
+}
+.form
+{
+    margin: 20px;
+}
+label
+{
+    width: 20%;
+}
+.input-info-general
+{
+    cursor: not-allowed;
+    height: 30px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding-left: 5px;
+}
+.label-info-fields
+{
+    text-align: right;
+    padding-right: 5px;
+}
+.input-info-detail
+{
+    height: 30px;
+    border-radius: 2px;
+}
+
+/*content right - img content*/
+.img-ava
+{
+    margin-bottom: 10px;
+}
+.button-change-avatar
+{
+    display: flex;
+    justify-content: center;
+}

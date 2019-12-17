@@ -60,7 +60,7 @@
                 <li>
                     <dl>
                         <dt>Trường</dt>
-                        <dd>Đại học Công Nghệ - Đại học Quốc Gia Hà Nội</dd>
+                        <dd>Đại học Công Nghệ - ĐHQGHN</dd>
                     </dl>
                 </li>
             </ul>
@@ -75,7 +75,7 @@
                     <img alt="" class="img-thumbnail" src="https://www.upsieutoc.com/images/2019/11/23/Nancy-Momoland-MrCong.com-031.jpg">
                 </div>
                 <div class="button-change-avatar">
-                    <button type="button" class="btn btn-info">Change Avatar</button>
+                    <h5 class="user-name">Nguyễn Trung Duy</h5>
                 </div>
             </div>
         </div>
