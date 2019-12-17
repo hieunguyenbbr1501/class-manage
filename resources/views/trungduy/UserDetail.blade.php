@@ -54,7 +54,7 @@
                 <li>
                     <dl>
                         <dt>Thư điện tử</dt>
-                        <dd>17020648@vnu.edu.vn</dd>
+                        <dd>{{ auth()->user()->email }}</dd>
                     </dl>
                 </li>
                 <li>

@@ -69,12 +69,19 @@ class LecturerController extends Controller
 //            dd($course);
             return view('lecturer.subDetail',compact('course','lectures','taken_courses'));
         }
-        dd('need to enrol');
+        else{
+            return view('lecturer.subDetail',compact('course','taken_courses','lectures'));
+        }
     }
 
     public function uploadLecture(Request $request){
-        dd($request);
-
+        $file = $request->file;
+        $file_name = time().rand(10,99);
+        $file->move('lectures/'.$request->lecture,$file_name.$file->getClientOriginalName());
+        $lecture = Lecture::where('id', $request->lecture)->firstOrFail();
+        $lecture->path = 'lectures'.'/'.$lecture->id.'/'.$file_name.$file->getClientOriginalName();
+        $lecture->save();
+        return redirect(route('lecturer.dashboard'));
     }
 
 
@@ -98,7 +105,7 @@ class LecturerController extends Controller
     public function detail(){
         $Lecturer = Lecturer::where('email', Session::get('lecturer_email'))->firstOrFail();
         Auth::setUser($Lecturer);
-        dd(Auth::user());
+        return view('trungduy.UserDetail');
     }
     /**
      * Display the specified resource.

@@ -79,7 +79,7 @@
                             <div class="news-study">
                                 <div>
                                     <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/f/spreadsheet-24" alt="">
-                                    <span class="under-link-content-left"> <a href="">Giáo trình môn học</a></span>
+                                    <span class="under-link-content-left"> <a href="{{ asset($lecture->path) }}">Giáo trình môn học</a></span>
                                 </div>
                                 <div>
                                     <button style="height: 16px;width: 16px">
