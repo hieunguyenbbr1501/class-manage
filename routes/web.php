@@ -44,6 +44,10 @@ Route::group(['middleware' => ['checkLogin']],function (){
         'uses' => 'StudentController@courseDetail',
         'as' => 'student.course.detail'
     ]);
+    Route::get('student/editprofile',[
+        'uses' => 'StudentController@edit',
+        'as' => 'student.editprofile'
+    ]);
 });
 Route::group(['middleware' => ['checkLoginForLecturer']],function (){
     Route::get('lecturer/dashboard', [
@@ -59,6 +63,10 @@ Route::group(['middleware' => ['checkLoginForLecturer']],function (){
         'as' => 'lecturer.detail'
     ]);
     Route::post('lecturer/upload/{lecture}', 'LecturerController@uploadLecture')->name('lecturer.upload');
+    Route::get('lecturer/editprofile',[
+        'uses' => 'LecturerController@edit',
+        'as' => 'lecturer.editprofile'
+    ]);
 
 });
 Route::get('/test','Frontend\HomeController@index');

@@ -17,7 +17,9 @@
                         <div class="news-study">
                             <div>
                                 <div>
-                                    <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/forum/1574132315/icon" alt="">
+                                    <img
+                                        src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/forum/1574132315/icon"
+                                        alt="">
                                     <span class="under-link-content-left"><a href=""> Diễn đàn tin tức</a></span>
                                 </div>
                             </div>
@@ -25,7 +27,8 @@
                                 <div>
                                     <div>Quá trình học tập của bạn
                                         <span>
-                                    <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/help" alt="">
+                                    <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/help"
+                                         alt="">
                                 </span>
                                     </div>
                                 </div>
@@ -34,118 +37,87 @@
                     </div>
 
 
-                    <div>
-                        <div class="news-study">
+                    {{--                tuan 1--}}
+                    @foreach($lectures as $lecture)
+                        <div class="sub-week">
                             <div>
-                                <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/f/spreadsheet-24" alt="">
-                                <span class="under-link-content-left"> <a href="">Giáo trình môn học</a></span>
+                                <h3 class="timesub under-link-content-left"><a href="">Tuần {{ $lecture->week }}</a>
+                                </h3>
                             </div>
                             <div>
-                                <button style="height: 16px;width: 16px">
-{{--                                    <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/i/completion-manual-n" alt="">--}}
-                                </button>
+                                <div class="news-study">
+                                    <div>
+                                        <img
+                                            src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/f/spreadsheet-24"
+                                            alt="">
+                                        <span class="under-link-content-left">
+                                            @if($lecture->path)
+                                                <a href="{{ asset($lecture->path) }}">Giáo trình môn học</a>
+                                            @endif
+                                </span>
+                                    </div>
+                                    <div>
+                                        <button style="height: 16px;width: 16px">
+                                            {{--                                    <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/i/completion-manual-n" alt="">--}}
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div style="margin-left: 30px">
-                            <p>Đây là giáo trình môn học</p>
-                        </div>
-                    </div>
 
-                    <div>
-                        <div class="news-study">
-                            <div>
-                                <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/f/spreadsheet-24" alt="">
-                                <span class="under-link-content-left"> <a href="">Giáo trình môn học</a></span>
-                            </div>
-                            <div>
-                                <button style="height: 16px;width: 16px">
-                                    {{--                                    <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/i/completion-manual-n" alt="">--}}
-                                </button>
-                            </div>
                         </div>
-                        <div style="margin-left: 30px">
-                            <p>Đây là giáo trình môn học</p>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
-{{--                tuan 1--}}
-                @foreach($lectures as $lecture)
-                <div class="sub-week">
-                    <div>
-                        <h3 class="timesub under-link-content-left"><a href="">Tuần {{ $lecture->week }}</a></h3>
-                    </div>
-                    <div>
-                        <div class="news-study">
-                            <div>
-                                <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/f/spreadsheet-24" alt="">
-                                <span class="under-link-content-left"> <a href="{{ asset($lecture->path) }}">Giáo trình môn học</a></span>
-                            </div>
-                            <div>
-                                <button style="height: 16px;width: 16px">
-                                    {{--                                    <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/i/completion-manual-n" alt="">--}}
-                                </button>
-                            </div>
-                        </div>
-                        <div style="margin-left: 30px">
-                            <p>Đây là giáo trình môn học</p>
-                        </div>
-                    </div>
+                <div class="col-lg-4">
 
-                </div>
-                @endforeach
-            </div>
-            <div class="col-lg-4">
-
-                <div style="" class="sidebar">
-                    <h2>Navigation</h2>
-                    <a href="" class="make-color gohome">Trang chủ</a>
-                    <div>
-                        <ul>
-                            <li>
-                                <a href="">
-                                    <span><i class="far fa-newspaper"></i></span>
-                                    <span class="make-color">Tin tức chung</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" >
-                                    <span><i class="fas fa-home"></i></span>
-                                    <span class="make-color">Trang chủ hệ thống</span>
-                                </a>
-                            </li>
-                            <li>
+                    <div style="" class="sidebar">
+                        <h2>Navigation</h2>
+                        <a href="" class="make-color gohome">Trang chủ</a>
+                        <div>
+                            <ul>
+                                <li>
+                                    <a href="">
+                                        <span><i class="far fa-newspaper"></i></span>
+                                        <span class="make-color">Tin tức chung</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span><i class="fas fa-home"></i></span>
+                                        <span class="make-color">Trang chủ hệ thống</span>
+                                    </a>
+                                </li>
+                                <li>
                             <span class="allsub">
                                 <span class="sub-content"><i class="fas fa-caret-right"></i></span>
                                 <span class="make-color sub-content">Các khóa học của tôi</span>
                             </span>
-                                <ul class="display-sub">
-                                    <li>
-                                        <a href="">
-                                            <span><i class="fas fa-book-reader"></i></span>
-                                            <span class="make-color">INT2202</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <span><i class="fas fa-book-reader"></i></span>
-                                            <span class="make-color">INT2202</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <span><i class="fas fa-book-reader"></i></span>
-                                            <span class="make-color">INT2202</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                                    <ul class="display-sub">
+                                        <li>
+                                            <a href="">
+                                                <span><i class="fas fa-book-reader"></i></span>
+                                                <span class="make-color">INT2202</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <span><i class="fas fa-book-reader"></i></span>
+                                                <span class="make-color">INT2202</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <span><i class="fas fa-book-reader"></i></span>
+                                                <span class="make-color">INT2202</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
+
                 </div>
-
             </div>
-        </div>
 
-    </div>
+        </div>
 @endsection
