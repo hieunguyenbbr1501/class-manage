@@ -11,10 +11,10 @@ class Lecturer extends \Illuminate\Foundation\Auth\User
     //
     use Notifiable;
     protected $guard = 'lecturer';
-
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $guarded = ['id'];
+//    protected $fillable = [
+//        'name', 'email', 'password',
+//    ];
 
     protected $hidden = [
         'password', 'remember_token',

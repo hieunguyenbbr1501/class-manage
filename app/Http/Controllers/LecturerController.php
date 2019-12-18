@@ -6,6 +6,7 @@ use App\Http\Requests\LectureRequest;
 use App\Lecturer;
 use App\Models\Course;
 use App\Models\Lecture;
+use App\Models\Post;
 use App\Models\Term;
 use App\Models\Year;
 use Carbon\Carbon;
@@ -47,8 +48,9 @@ class LecturerController extends Controller
             $term = Term::where('order', 'first')->where('year', $scholar_year->name)->firstOrFail();
             $courses = $term->courses()->get();
         }
+        $posts = Post::paginate(1);
         $taken_courses = Auth::user()->courses()->get();
-        return view('lecturer.home',compact('taken_courses','courses'));
+        return view('lecturer.home',compact('taken_courses','courses','posts'));
     }
 
     /**
@@ -105,7 +107,7 @@ class LecturerController extends Controller
     public function detail(){
         $Lecturer = Lecturer::where('email', Session::get('lecturer_email'))->firstOrFail();
         Auth::setUser($Lecturer);
-        return view('trungduy.UserDetail');
+        return view('lecturer.UserDetail');
     }
     /**
      * Display the specified resource.
@@ -127,6 +129,9 @@ class LecturerController extends Controller
     public function edit(Lecturer $teacher)
     {
         //
+        $Lecturer = Lecturer::where('email', Session::get('lecturer_email'))->firstOrFail();
+        Auth::setUser($Lecturer);
+        return view('lecturer.editProfile');
     }
 
     /**
@@ -138,7 +143,19 @@ class LecturerController extends Controller
      */
     public function update(Request $request, Lecturer $teacher)
     {
-        //
+        //dd($teacher);
+        $Lecturer = Lecturer::where('email', Session::get('lecturer_email'))->firstOrFail();
+        Auth::setUser($Lecturer);
+        $Lecturer->dob = $request->dob;
+        $Lecturer->address = $request->address;
+        $Lecturer->gender = $request->gender;
+        $file = $request->avatar;
+        $file_name = time().rand(10,99);
+        $file->move('img/avatar/',$file_name.$file->getClientOriginalName());
+        $Lecturer->avatar = 'img/avatar/'.$file_name.$file->getClientOriginalName();
+        $Lecturer->save();
+        //$teacher->save();
+        return redirect()->to(route('lecturer.detail'));
     }
 
     /**

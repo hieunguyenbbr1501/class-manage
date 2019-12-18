@@ -30,6 +30,10 @@ Route::post('lecturer/login-attempt.html',[
     'uses' => 'LecturerLoginController@login',
     'as' => 'lecturer.login.post'
 ]);
+Route::get('post/{slug}.html',[
+    'uses' => 'Frontend\HomeController@postDetail',
+    'as' => 'post.detail'
+]);
 Route::group(['middleware' => ['checkLogin']],function (){
     Route::get('student/dashboard',[
         'uses' => 'StudentController@index',
@@ -66,6 +70,10 @@ Route::group(['middleware' => ['checkLoginForLecturer']],function (){
     Route::get('lecturer/editprofile',[
         'uses' => 'LecturerController@edit',
         'as' => 'lecturer.editprofile'
+    ]);
+    Route::post('lecturer/update/{lecturer}',[
+        'uses' => 'LecturerController@update',
+        'as' => 'lecturer.update'
     ]);
 
 });

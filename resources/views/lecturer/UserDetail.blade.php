@@ -1,4 +1,4 @@
-@extends('trungduy/layout.app')
+@extends('lecturer.app')
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/head.css') }}">
 <link rel="stylesheet" href="{{ asset('css/userdetail.css') }}">
@@ -22,7 +22,7 @@
                 <h3 style="font-size: 20px;font-weight: 700">Chi tiết người dùng</h3>
             </div>
             <div style="margin: auto 0">
-                <a href="{{ route('student.editprofile') }}">Sửa hồ sơ cá nhân</a>
+                <a href="{{ route('lecturer.editprofile') }}">Sửa hồ sơ cá nhân</a>
             </div>
         </div>
         <div>
@@ -72,7 +72,7 @@
         <div class="col-lg-8">
             <div class="">
                 <div class="img-ava">
-                    <img alt="" class="img-thumbnail" src="https://www.upsieutoc.com/images/2019/11/23/Nancy-Momoland-MrCong.com-031.jpg">
+                    <img alt="" style="width: 100%; height: auto" class="img-thumbnail" src="{{ auth()->user()->avatar ? asset(auth()->user()->avatar) : asset('default/default.png') }}">
                 </div>
                 <div class="button-change-avatar">
                     <h5 class="user-name">Nguyễn Trung Duy</h5>

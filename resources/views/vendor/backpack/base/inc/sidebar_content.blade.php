@@ -20,3 +20,4 @@
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('subject') }}'><i class='nav-icon fa fa-question'></i> Subjects</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('course') }}'><i class='nav-icon fa fa-question'></i> Courses</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('lecture') }}'><i class='nav-icon fa fa-question'></i> Lectures</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('post') }}'><i class='nav-icon fa fa-question'></i> Posts</a></li>

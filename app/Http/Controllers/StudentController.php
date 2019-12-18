@@ -83,7 +83,7 @@ class StudentController extends Controller
     public function detail(){
         $student = Student::where('email', Session::get('lecturer_email'))->firstOrFail();
         Auth::setUser($student);
-        dd(Auth::user());
+        return view('trungduy.UserDetail');
     }
 
     public function editProfile(Request $request)
