@@ -85,6 +85,9 @@ Route::get('editprofile',function (){
 Route::get('enrol',function (){
     return view('trungduy/enrol');
 });
+Route::get('postadmin',function (){
+    return view('trungduy/postadmin');
+});
 
 
 
