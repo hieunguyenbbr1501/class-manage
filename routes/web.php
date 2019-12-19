@@ -56,6 +56,11 @@ Route::group(['middleware' => ['checkLogin']],function (){
         'uses' => 'StudentController@edit',
         'as' => 'student.editprofile'
     ]);
+    Route::get('student/post/{slug}.html',[
+        'uses' => 'StudentController@postDetail',
+        'as' => 'student.post.detail'
+    ]);
+
 });
 Route::group(['middleware' => ['checkLoginForLecturer']],function (){
     Route::get('lecturer/dashboard', [

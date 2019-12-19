@@ -14,6 +14,6 @@ class HomeController extends Controller
     }
     public function postDetail($slug){
         $post = Post::where('slug', $slug)->firstOrFail();
-        dd($post);
+        return view('trungduy.postadmin',compact('post'));
     }
 }

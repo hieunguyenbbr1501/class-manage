@@ -91,7 +91,7 @@
                                 <p>
                                     {!! $post->content !!}
                                 </p>
-                                <a href="" style="color: #0B90C4">Xem tiếp nội dung chủ đề này</a>
+                                <a href="{{ route('post.detail',['slug' => $post->slug]) }}" style="color: #0B90C4">Xem tiếp nội dung chủ đề này</a>
                             </div>
                         </div>
                     </div>

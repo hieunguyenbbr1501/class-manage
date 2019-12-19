@@ -47,14 +47,15 @@
                             <div>
                                 <div class="news-study">
                                     <div>
-                                        <img
-                                            src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/f/spreadsheet-24"
-                                            alt="">
-                                        <span class="under-link-content-left">
-                                            @if($lecture->path)
+                                        @if($lecture->path)
+                                            <img
+                                                src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/f/spreadsheet-24"
+                                                alt="">
+                                            <span class="under-link-content-left">
                                                 <a href="{{ asset($lecture->path) }}">Giáo trình môn học</a>
-                                            @endif
                                 </span>
+                                        @endif
+
                                     </div>
                                     <div>
                                         <button style="height: 16px;width: 16px">
@@ -71,7 +72,7 @@
 
                     <div style="" class="sidebar">
                         <h2>Navigation</h2>
-                        <a href="" class="make-color gohome">Trang chủ</a>
+                        <a href="{{ route('student.dashboard') }}" class="make-color gohome">Trang chủ</a>
                         <div>
                             <ul>
                                 <li>
@@ -92,24 +93,14 @@
                                 <span class="make-color sub-content">Các khóa học của tôi</span>
                             </span>
                                     <ul class="display-sub">
+                                        @foreach(auth()->user()->courses as $course)
                                         <li>
-                                            <a href="">
+                                            <a href="{{ route('student.course.detail',['id' => $course->id]) }}">
                                                 <span><i class="fas fa-book-reader"></i></span>
-                                                <span class="make-color">INT2202</span>
+                                                <span class="make-color">{{ $course->code }}</span>
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="">
-                                                <span><i class="fas fa-book-reader"></i></span>
-                                                <span class="make-color">INT2202</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                <span><i class="fas fa-book-reader"></i></span>
-                                                <span class="make-color">INT2202</span>
-                                            </a>
-                                        </li>
+                                        @endforeach
                                     </ul>
                                 </li>
                             </ul>

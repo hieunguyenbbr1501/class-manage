@@ -36,7 +36,7 @@
                         <span>
                             <a href="" style="font-size: 16px" class="subject-enrol">
                             <i class="fas fa-book-reader"></i>
-                            Phát triển ứng dụng web (<span>TS.Hoàng Xuân Tùng</span>)
+                            {{ $course->code }} (<span>TS.Hoàng Xuân Tùng</span>)
                             </a>
                         </span>
                         </div>
@@ -44,7 +44,7 @@
                 </div>
 
                 <div style="text-align: center">
-                    <button type="button" class="btn btn-primary">Enrol</button>
+                    <a href="{{ route('student.enrol',['id' => $course->id]) }}"><button type="button" class="btn btn-primary">Enrol</button></a>
                 </div>
             </div>
             <div class="col-lg-4">

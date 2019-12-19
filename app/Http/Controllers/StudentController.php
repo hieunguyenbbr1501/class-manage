@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Post;
 use App\Models\Subject;
 use App\Models\Term;
 use App\Models\Year;
@@ -33,8 +34,9 @@ class StudentController extends Controller
             $courses = $term->courses()->get();
             //dd($courses);
         }
+        $posts = Post::paginate(3);
         $taken_courses = Auth::user()->courses()->get();
-        return view('trungduy.home',compact('term','courses','taken_courses'));
+        return view('trungduy.home',compact('term','courses','taken_courses','posts'));
 
     }
 
@@ -54,7 +56,9 @@ class StudentController extends Controller
 //            dd($course);
             return view('trungduy.subDetail',compact('course','lectures'));
         }
-        dd('need to enrol');
+        else{
+            return view('trungduy.enrol',compact('course'));
+        }
     }
 
     public function enrol($id)
@@ -64,10 +68,10 @@ class StudentController extends Controller
         $student = Student::where('email', Session::get('email'))->firstOrFail();
         Auth::setUser($student);
         if (Auth::user()->courses->contains($course)) {
-            redirect()->to(route('student.login'));
+            redirect()->to(route('student.dashboard'));
         }
         $subject = $course->subject()->first();
-        if($subject->pre()->first()){
+        if($subject->pre()->first() && $subject->pre()->first()->id !=0){
             $pre = $subject->pre()->first();
             if(!Auth::user()->subjects->contains($pre)){
                 dd('not allowed');
@@ -75,15 +79,19 @@ class StudentController extends Controller
         }
         Auth::user()->courses()->attach($course);
         Auth::user()->subjects()->attach($subject);
-        dd('success');
-        $student = Student::where('email', Session::get('student_id'))->firstOrFail();
-        $course = Course::find($id);
-        //dd($course);
+        return redirect()->route('student.dashboard');
     }
     public function detail(){
         $student = Student::where('email', Session::get('email'))->firstOrFail();
         Auth::setUser($student);
         return view('trungduy.UserDetail');
+    }
+
+    public function postDetail($slug){
+        $post = Post::where('slug', $slug)->firstOrFail();
+        $student = Student::where('email', Session::get('email'))->firstOrFail();
+        Auth::setUser($student);
+        return view('trungduy.postadmin',compact('post'));
     }
 
     public function editProfile(Request $request)
