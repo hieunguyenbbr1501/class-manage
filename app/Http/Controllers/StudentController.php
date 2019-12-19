@@ -81,7 +81,7 @@ class StudentController extends Controller
         //dd($course);
     }
     public function detail(){
-        $student = Student::where('email', Session::get('lecturer_email'))->firstOrFail();
+        $student = Student::where('email', Session::get('email'))->firstOrFail();
         Auth::setUser($student);
         return view('trungduy.UserDetail');
     }
@@ -122,10 +122,13 @@ class StudentController extends Controller
      * @param \App\Student $student
      * @return \Illuminate\Http\Response
      */
-//    public function edit(Student $student)
-//    {
-//        //
-//    }
+    public function edit(Student $student)
+    {
+        //
+        $Student = Student::where('email', Session::get('email'))->firstOrFail();
+        Auth::setUser($Student);
+        return view('trungduy.editProfile');
+    }
 
     /**
      * Update the specified resource in storage.

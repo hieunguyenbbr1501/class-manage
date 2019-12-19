@@ -16,10 +16,12 @@
     <nav class="navbar-inner">
         <div class="head" style="display: flex;justify-content: space-between;">
             <div>
-                <a href="" title="Trang chu" class="nav-home">
-                    <img style="width: 40px;height: 40px" src="https://www.upsieutoc.com/images/2019/11/23/Nancy-Momoland-MrCong.com-031.jpg" alt="">
+                <a href="{{ route('student.dashboard') }}" title="Trang chu" class="nav-home">
+                    <img style="width: 40px;height: 40px"
+                         src="{{ auth()->user()->avatar ? asset(auth()->user()->avatar) : asset('default/default.png') }}"
+                         alt="">
                 </a>
-                <a href="" class="nav-home">Trang chủ</a>
+                <a href="{{ route('student.dashboard') }}" class="nav-home">Trang chủ</a>
             </div>
             <div style="margin: auto 0;display: flex">
                 <div>
@@ -31,12 +33,15 @@
                 <div style="" class="dropdown">
                     <a href="" class="dropbtn">
                         <span>
-                            <span>Nguyễn Trung Duy</span>
-                            <span> <img style="width: 40px;height: 40px" src="https://www.upsieutoc.com/images/2019/11/23/Nancy-Momoland-MrCong.com-031.jpg" alt=""></span>
+                            <span>{{ auth()->user()->name }}</span>
+                            <span>                     <img style="width: 40px;height: 40px"
+                                                            src="{{ auth()->user()->avatar ? asset(auth()->user()->avatar) : asset('default/default.png') }}"
+                                                            alt="">
+</span>
                             <b class="caret"></b>
                         </span>
                     </a>
-                    <div class="dropdown-content"style="width: 100%">
+                    <div class="dropdown-content" style="width: 100%">
                         <a href="#"><i class="fas fa-user-graduate"></i>Trang cá nhân</a>
                         <a href="#"><i class="fas fa-user-lock"></i>Đổi mật khẩu</a>
                         <a href="#"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a>
@@ -53,8 +58,8 @@
 <footer class="page-footer">
     <div style="margin-top: 1em">
         <div>Trường Đại học Công Nghệ - ĐHQGHN</div>
-        <div>Bạn đã đăng nhập với tên (<a href="">Nguyễn Trung Duy</a>)</div>
-        <div><a href="">Trang chủ</a></div>
+        <div>Bạn đã đăng nhập với tên (<a href="{{ route('student.detail') }}">{{ auth()->user()->name }}</a>)</div>
+        <div><a href="{{ route('student.dashboard') }}">Trang chủ</a></div>
     </div>
 </footer>
 </body>

@@ -17,7 +17,9 @@
                         <div class="news-study">
                             <div>
                                 <div>
-                                    <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/forum/1574132315/icon" alt="">
+                                    <img
+                                        src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/forum/1574132315/icon"
+                                        alt="">
                                     <span class="under-link-content-left"><a href=""> Diễn đàn tin tức</a></span>
                                 </div>
                             </div>
@@ -25,7 +27,8 @@
                                 <div>
                                     <div>Quá trình học tập của bạn
                                         <span>
-                                    <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/help" alt="">
+                                    <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/help"
+                                         alt="">
                                 </span>
                                     </div>
                                 </div>
@@ -44,8 +47,12 @@
                         <div>
                             <div class="news-study">
                                 <div>
-                                    <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/f/spreadsheet-24" alt="">
-                                    <span class="under-link-content-left"> <a href="{{ asset($lecture->path) }}">Giáo trình môn học</a></span>
+                                    @if($lecture->path)
+                                        <img
+                                            src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/f/spreadsheet-24"
+                                            alt="">
+                                        <span class="under-link-content-left"> <a href="{{ asset($lecture->path) }}">Giáo trình môn học</a></span>
+                                    @endif
                                 </div>
                                 <div>
                                     <button style="height: 16px;width: 16px">
@@ -60,7 +67,8 @@
                     </div>
                     <div class="card-body">
 
-                        <form action="{{ route('lecturer.upload',['lecture' => $lecture]) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('lecturer.upload',['lecture' => $lecture]) }}" method="POST"
+                              enctype="multipart/form-data">
                             @csrf
                             <input type="file" name="file" class="form-control">
                             <br>
@@ -83,7 +91,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="" >
+                                <a href="">
                                     <span><i class="fas fa-home"></i></span>
                                     <span class="make-color">Trang chủ hệ thống</span>
                                 </a>
@@ -95,12 +103,12 @@
                             </span>
                                 <ul class="display-sub">
                                     @foreach($taken_courses as $courses)
-                                    <li>
-                                        <a href="{{ route('lecturer.course.detail',['id' => $courses->id]) }}">
-                                            <span><i class="fas fa-book-reader"></i></span>
-                                            <span class="make-color">{{ $courses->code }}</span>
-                                        </a>
-                                    </li>
+                                        <li>
+                                            <a href="{{ route('lecturer.course.detail',['id' => $courses->id]) }}">
+                                                <span><i class="fas fa-book-reader"></i></span>
+                                                <span class="make-color">{{ $courses->code }}</span>
+                                            </a>
+                                        </li>
                                     @endforeach
                                 </ul>
                             </li>

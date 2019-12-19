@@ -48,7 +48,7 @@ class LecturerController extends Controller
             $term = Term::where('order', 'first')->where('year', $scholar_year->name)->firstOrFail();
             $courses = $term->courses()->get();
         }
-        $posts = Post::paginate(1);
+        $posts = Post::paginate(3);
         $taken_courses = Auth::user()->courses()->get();
         return view('lecturer.home',compact('taken_courses','courses','posts'));
     }

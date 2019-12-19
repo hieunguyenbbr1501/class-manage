@@ -48,6 +48,10 @@ Route::group(['middleware' => ['checkLogin']],function (){
         'uses' => 'StudentController@courseDetail',
         'as' => 'student.course.detail'
     ]);
+    Route::get('student/detail.html',[
+        'uses' => 'StudentController@detail',
+        'as' => 'student.detail'
+    ]);
     Route::get('student/editprofile',[
         'uses' => 'StudentController@edit',
         'as' => 'student.editprofile'
