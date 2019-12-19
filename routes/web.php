@@ -116,6 +116,10 @@ Route::get('editprofile',function (){
     return view('trungduy/editProfile');
 });
 
+Route::get('enrol',function (){
+    return view('trungduy/enrol');
+});
+
 
 
 
