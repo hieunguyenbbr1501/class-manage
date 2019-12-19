@@ -28,8 +28,8 @@
             <input type="button" value="Xem" class="Xem"  style="">
         </div>
     </div>
-    <div style="display: flex;margin-right: 10px;margin-left: 10px">
-        <div class="searchSub" style="width: 70%">
+    <div style="" class="container">
+        <div class="searchSub col-lg-8" style="">
             <h2>Kết quả tìm kiếm: <span>1</span></h2>
             <div class="search-content">
                 <div class="search-result search-odd">
@@ -116,7 +116,7 @@
                 </div>
             </div>
         </div>
-        <div style="width: 30%" class="navigati">
+        <div style="" class="navigati col-lg-4">
             <div style="background-color: #f8f8f8;" class="naviga">
                 <h2>Navigation</h2>
                 <div>
