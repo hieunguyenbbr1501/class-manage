@@ -164,6 +164,13 @@ class LecturerController extends Controller
      * @param  \App\Lecturer  $teacher
      * @return \Illuminate\Http\Response
      */
+    public function postDetail($slug){
+        $post = Post::where('slug', $slug)->firstOrFail();
+        $Lecturer = Lecturer::where('email', Session::get('lecturer_email'))->firstOrFail();
+        Auth::setUser($Lecturer);
+        return view('lecturer.postadmin',compact('post'));
+    }
+
     public function destroy(Lecturer $teacher)
     {
         //

@@ -1,4 +1,4 @@
-@extends('trungduy/layout.app')
+@extends('lecturer.app')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/head.css') }}">
@@ -66,7 +66,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('student.dashboard') }}">
+                            <a href="{{ route('lecturer.dashboard') }}">
                                 <span><i class="fas fa-home"></i></span>
                                 <span class="make-color">Trang chủ hệ thống</span>
                             </a>

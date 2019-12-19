@@ -84,6 +84,10 @@ Route::group(['middleware' => ['checkLoginForLecturer']],function (){
         'uses' => 'LecturerController@update',
         'as' => 'lecturer.update'
     ]);
+    Route::get('lecturer/post/{slug}.html',[
+        'uses' => 'LecturerController@postDetail',
+        'as' => 'lecturer.post.detail'
+    ]);
 
 });
 Route::get('/test','Frontend\HomeController@index');
