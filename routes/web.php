@@ -89,6 +89,10 @@ Route::get('postadmin',function (){
     return view('trungduy/postadmin');
 });
 
+Route::get('liststudent',function (){
+    return view('trungduy/listStudent');
+});
+
 
 
 
