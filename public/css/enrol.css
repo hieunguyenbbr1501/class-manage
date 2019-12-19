@@ -1,0 +1,19 @@
+/* content-left*/
+.news-study
+{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.content-sub
+{
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+subject-enrol:hover
+{
+    text-decoration: underline !important;
+}
