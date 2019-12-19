@@ -30,15 +30,16 @@
     </div>
     <div style="" class="container">
         <div class="searchSub col-lg-8" style="">
-            <h2>Kết quả tìm kiếm: <span>1</span></h2>
+            <h2>Kết quả tìm kiếm: <span>{{ $courses->count() }}</span></h2>
+            @foreach($courses as $course)
             <div class="search-content">
                 <div class="search-result search-odd">
                     <div class="content-sub">
                         <div >
                             <span>
-                                <a href="" style="font-size: 23px" class="">
+                                <a href="{{ route('student.course.detail',['id' => $course->id]) }}" style="font-size: 23px" class="">
                                 <i class="fas fa-book-reader"></i>
-                                Phát triển ứng dụng web
+                                {{ $course->subject->name }} - {{ $course->code }}
                                 </a>
                             </span>
                         </div>
@@ -50,7 +51,6 @@
                     <div class="content-sub">
                         <div>
                             <div><span>Giáo viên: <a href="">Đào Minh Thư</a> </span></div>
-                            <div><span>Giáo viên: <a href="">Đào Minh Thư</a> </span></div>
                         </div>
                         <div style="margin: auto 0">
                             <span>Mục: <a href="">Công Nghệ Thông Tin</a></span>
@@ -58,63 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="search-content">
-                <div class="search-result ">
-                    <div class="content-sub">
-                        <div >
-                            <span>
-                                <a href="" style="font-size: 23px" class="">
-                                <i class="fas fa-book-reader"></i>
-                                Phát triển ứng dụng web
-                                </a>
-                            </span>
-                        </div>
-                        <div>
-                            <i class="fas fa-reply-all"></i>
-                        </div>
-
-                    </div>
-                    <div class="content-sub">
-                        <div>
-                            <div><span>Giáo viên: <a href="">Đào Minh Thư</a> </span></div>
-{{--                            <div><span>Giáo viên: <a href="">Đào Minh Thư</a> </span></div>--}}
-                        </div>
-                        <div style="margin: auto 0">
-                            <span>Mục: <a href="">Công Nghệ Thông Tin</a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="search-content">
-                <div class="search-result search-odd">
-                    <div class="content-sub">
-                        <div >
-                            <span>
-                                <a href="" style="font-size: 23px" class="">
-                                <i class="fas fa-book-reader"></i>
-                                Phát triển ứng dụng web
-                                </a>
-                            </span>
-                        </div>
-                        <div>
-                            <i class="fas fa-reply-all"></i>
-                        </div>
-
-                    </div>
-                    <div>
-                        <img style="width: 100px" src="https://www.upsieutoc.com/images/2019/11/23/Nancy-Momoland-MrCong.com-031.jpg" alt="">
-                    </div>
-                    <div class="content-sub">
-                        <div>
-                            <div><span>Giáo viên: <a href="">Đào Minh Thư</a> </span></div>
-                            {{--                            <div><span>Giáo viên: <a href="">Đào Minh Thư</a> </span></div>--}}
-                        </div>
-                        <div style="margin: auto 0">
-                            <span>Mục: <a href="">Công Nghệ Thông Tin</a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
         <div style="" class="navigati col-lg-4">
             <div style="background-color: #f8f8f8;" class="naviga">

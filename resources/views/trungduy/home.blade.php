@@ -29,9 +29,11 @@
     <div>
         <h1 style="text-align: center">Website môn học</h1>
         <div style="text-align:center">
-            <label style="">Tìm kiếm khóa học: </label>
-            <input class="search" type="text" placeholder="Search" style="">
-            <input type="button" value="Xem" class="Xem"  style="">
+            <form action="{{ route('student.search') }}" method="POST"> {{csrf_field()}}
+                <label style="">Tìm kiếm khóa học: </label>
+                <input class="search" name="query" type="text" placeholder="Search" style="">
+                <button type="submit" class="btn btn-primary"  style="">Xem</button>
+            </form>
         </div>
     </div>
     <div style="display: flex;margin-right: 10px;margin-left: 10px">

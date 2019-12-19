@@ -60,6 +60,10 @@ Route::group(['middleware' => ['checkLogin']],function (){
         'uses' => 'StudentController@postDetail',
         'as' => 'student.post.detail'
     ]);
+    Route::post('student/search',[
+        'uses' => 'StudentController@search',
+        'as' => 'student.search'
+    ]);
 
 });
 Route::group(['middleware' => ['checkLoginForLecturer']],function (){

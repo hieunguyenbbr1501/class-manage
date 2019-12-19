@@ -94,6 +94,16 @@ class StudentController extends Controller
         return view('trungduy.postadmin',compact('post'));
     }
 
+    public function search(Request $request){
+        $student = Student::where('email', Session::get('email'))->firstOrFail();
+        Auth::setUser($student);
+        $input = $request['query'];
+        $courses = Course::where('code', 'LIKE', '%' . $input . '%')
+            //->orWhere('another_column', 'LIKE', '%' . $input . '%')
+            // etc
+            ->get();
+        return view('trungduy.searchSubjects',compact('courses'));
+    }
     public function editProfile(Request $request)
     {
         //
