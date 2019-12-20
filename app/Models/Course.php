@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Lecturer;
+use App\Student;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
@@ -29,6 +30,9 @@ class Course extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+    public function students(){
+        return $this->belongsToMany(Student::class,'students_courses');
+    }
     public function subject(){
         return $this->belongsTo(Subject::class);
     }

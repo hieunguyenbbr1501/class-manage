@@ -80,8 +80,8 @@ class LecturerController extends Controller
         $Lecturer = Lecturer::where('email', Session::get('lecturer_email'))->firstOrFail();
         Auth::setUser($Lecturer);
         $course = Course::findOrFail($id);
-        $students = $course->students();
-        return view('lecturer.students');
+        $students = $course->students()->get();
+        return view('lecturer.students',compact('students'));
     }
 
     public function uploadLecture(Request $request){

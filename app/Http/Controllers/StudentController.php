@@ -56,9 +56,13 @@ class StudentController extends Controller
 //            dd($course);
             return view('trungduy.subDetail',compact('course','lectures'));
         }
-        else{
+        elseif(Auth::user()->courses->contains($course->subject()->first()->pre()->first())){
             return view('trungduy.enrol',compact('course'));
         }
+        else{
+            return view('trungduy.not_allowed');
+        }
+
     }
 
     public function enrol($id)
