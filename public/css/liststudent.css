@@ -1,0 +1,52 @@
+/*content-left*/
+.text-list-student
+{
+    font-weight: 700;
+    font-size: 16px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+/**/
+/*content-right*/
+ul > li
+{
+    list-style: none;
+}
+.sidebar
+{
+    background-color: #f8f8f8;
+    padding:10px;
+}
+.gohome
+{
+    font-weight: bold;
+}
+a:hover
+{
+    text-decoration: none;
+}
+.make-color:hover
+{
+    text-decoration: underline;
+}
+.sub-content
+{
+    color: #337ab7;
+}
+.sub-content:hover
+{
+    color: #23527c;
+    cursor: pointer;
+}
+.under-link-content-left:hover
+{
+    text-decoration: underline;
+}
