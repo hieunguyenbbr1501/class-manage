@@ -17,7 +17,7 @@
         <div class="head" style="display: flex;justify-content: space-between;">
             <div>
                 <a href="" title="Trang chu" class="nav-home">
-                    <img style="width: 40px;height: 40px" src="https://www.upsieutoc.com/images/2019/11/23/Nancy-Momoland-MrCong.com-031.jpg" alt="">
+                    <img style="width: 40px;height: 40px" src="{{ auth()->user()->avatar ? asset(auth()->user()->avatar) : asset('/default/default.png') }}" alt="">
                 </a>
                 <a href="" class="nav-home">Trang chủ</a>
             </div>

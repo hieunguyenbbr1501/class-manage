@@ -75,6 +75,10 @@ Route::group(['middleware' => ['checkLoginForLecturer']],function (){
         'uses' => 'LecturerController@courseDetail',
         'as' => 'lecturer.course.detail'
     ]);
+    Route::get('lecturer/course/{id}/students.html',[
+        'uses' => 'LecturerController@students',
+        'as' => 'lecturer.course.students'
+    ]);
     Route::get('lecturer/detail.html',[
         'uses' => 'LecturerController@detail',
         'as' => 'lecturer.detail'

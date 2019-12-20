@@ -289,30 +289,6 @@
         <div id="example"></div>
 
     <!------ Include the above in your HEAD tag ---------->
-
-    <div class="wrapper fadeInDown">
-        <div id="formContent">
-            <!-- Tabs Titles -->
-
-            <!-- Icon -->
-            <div class="fadeIn first">
-                <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
-            </div>
-
-            <!-- Login Form -->
-            <form method="POST" action="{{ url('login.html') }}">@csrf
-                <input type="text" id="email" class="fadeIn second" name="email" placeholder="login">
-                <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
-                <input type="submit" class="fadeIn fourth" value="Log In">
-            </form>
-
-            <!-- Remind Passowrd -->
-            <div id="formFooter">
-                <a class="underlineHover" href="#">Forgot Password?</a>
-            </div>
-
-        </div>
-    </div>
 </div>
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

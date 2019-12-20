@@ -25,7 +25,7 @@
                             </div>
                             <div>
                                 <div>
-                                    <div>Quá trình học tập của bạn
+                                    <div><a href="{{ route('lecturer.course.students') }}">Danh sách sinh viên</a>
                                         <span>
                                     <img src="https://courses.uet.vnu.edu.vn/theme/image.php/clean/core/1574132315/help"
                                          alt="">

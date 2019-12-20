@@ -76,6 +76,14 @@ class LecturerController extends Controller
         }
     }
 
+    public function students($id){
+        $Lecturer = Lecturer::where('email', Session::get('lecturer_email'))->firstOrFail();
+        Auth::setUser($Lecturer);
+        $course = Course::findOrFail($id);
+        $students = $course->students();
+        return view('lecturer.students');
+    }
+
     public function uploadLecture(Request $request){
         $file = $request->file;
         $file_name = time().rand(10,99);
