@@ -26,9 +26,9 @@ class Student extends User
         'name', 'email', 'password','address','dob','code','gender'
     ];
 
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+//    protected $hidden = [
+//        'password', 'remember_token',
+//    ];
 
     public function courses(){
         return $this->belongsToMany(Course::class,'students_courses');

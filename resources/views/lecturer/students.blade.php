@@ -33,14 +33,16 @@
                                 <th>Ngày sinh</th>
                                 <th>Email</th>
                             </tr>
+                            <?php $i=1; ?>
                             @foreach($students as $student)
                             <tr>
-                                <td>1</td>
+                                <td>{{ $i }}</td>
                                 <td>{{ $student->code }}</td>
                                 <td>{{ $student->name }}</td>
                                 <td>{{ $student->dob }}</td>
                                 <td>{{ $student->email }}</td>
                             </tr>
+                                <?php $i++; ?>
                             @endforeach
 
                         </table>

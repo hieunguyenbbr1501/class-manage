@@ -11,7 +11,9 @@ use App\Student;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Prologue\Alerts\Facades\Alert;
 
 class StudentController extends Controller
 {
@@ -22,7 +24,6 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //dd(Session::all());
         $student = Student::where('email', Session::get('email'))->firstOrFail();
         Auth::setUser($student);
         //dd(Auth::user()->courses()->get());
@@ -108,7 +109,25 @@ class StudentController extends Controller
             ->get();
         return view('trungduy.searchSubjects', compact('courses'));
     }
+    public function password(){
+        $student = Student::where('email', Session::get('email'))->firstOrFail();
+        Auth::setUser($student);
+        return view('trungduy.changePassword');
+    }
 
+    public function changePassword(Request $request){
+        $student = Student::where('email', Session::get('email'))->firstOrFail();
+        Auth::setUser($student);
+        //dd(Auth::user());
+        if(Hash::check($request->old_password,$student->password,[]) && $request->new_password != $request->old_password && $request->new_2 == $request->new_password){
+            $student->password = bcrypt($request->new_2);
+            $student->save();
+            Alert::success('Password changed')->flash();
+            return redirect()->to(route('student.dashboard'));
+        }
+        Alert::error('An error occured, please make sure you have typed the password correctly')->flash();
+        return redirect()->back();
+    }
     public function editProfile(Request $request)
     {
         //

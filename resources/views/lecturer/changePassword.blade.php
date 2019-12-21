@@ -54,7 +54,7 @@
                             <img alt="" class="img-thumbnail" src="{{ auth()->user()->avatar ? asset(auth()->user()->avatar) : asset('default/default.png') }}">
                         </div>
                         <div style="margin-top:45px;" class="col-xs-6 col-sm-6 col-md-6 login-box">
-                            <form action="{{ route('student.password.change') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('lecturer.password.change') }}" method="POST" enctype="multipart/form-data">
                                 @if (session('alert_messages'))
                                     <div class="alert alert-info">
                                         Error, please make sure to type the password correctly

@@ -50,10 +50,10 @@
                     </div>
                     <div class="content-sub">
                         <div>
-                            <div><span>Giáo viên: <a href="">Đào Minh Thư</a> </span></div>
+                            <div><span>Giáo viên: <a href=""></a> </span></div>
                         </div>
                         <div style="margin: auto 0">
-                            <span>Mục: <a href="">Công Nghệ Thông Tin</a></span>
+                            <span>Mục: <a href="">{{ $course->subject->name }}</a></span>
                         </div>
                     </div>
                 </div>

@@ -34,6 +34,11 @@
             <input type="button" value="Xem" class="Xem"  style="">
         </div>
     </div>
+    @if (session('alert_messages'))
+        <div class="alert alert-success">
+            Password changed successfully
+        </div>
+    @endif
     <div style="display: flex;margin-right: 10px;margin-left: 10px">
         <div class="news" style="width: 70%">
             <div class="block-courses-recently" >
@@ -68,7 +73,6 @@
                 </div>
             </div>
             <div>
-                <h2>Tin tức chung</h2>
                 @foreach($posts as $post)
                 <article style="" class="article-news">
                     <div class="section">
@@ -87,7 +91,6 @@
                         <div>
                             <div style="" class="left-picture"></div>
                             <div style="margin-left: 50px">
-                                <p style="margin-bottom: 10px">Chào các em,</p>
                                 <p>
                                     {!! $post->content !!}
                                 </p>
@@ -108,12 +111,6 @@
                 <a href="" class="make-color">Trang chủ</a>
                 <div>
                     <ul>
-                        <li>
-                            <a href="" class="make-color">
-                                <span><i class="far fa-newspaper"></i></span>
-                                <span>Tin tức chung</span>
-                            </a>
-                        </li>
                         <li>
                             <span class="allsub">
                                 <span ><i class="fas fa-caret-right"></i></span>
@@ -141,9 +138,9 @@
 
 <footer class="page-footer">
     <div style="margin-top: 1em">
-        <div>Trường Đại học Công Nghệ - ĐHQGHN</div>
-        <div>Bạn chưa đăng nhập (<a href="">Đăng nhập</a>)</div>
-        <div><a href="">Trang chủ</a></div>
+        <div>Trường Đại học 5</div>
+        <div>Bạn đã đăng nhập với tên (<a href="">{{ auth()->user()->name }}</a>)</div>
+        <div><a href="{{ route('lecturer.dashboard') }}">Trang chủ</a></div>
     </div>
 </footer>
 <script>

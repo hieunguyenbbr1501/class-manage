@@ -9,11 +9,14 @@ use App\Models\Lecture;
 use App\Models\Post;
 use App\Models\Term;
 use App\Models\Year;
+use App\Student;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Prologue\Alerts\Facades\Alert;
 
 class LecturerController extends Controller
 {
@@ -177,6 +180,26 @@ class LecturerController extends Controller
         $Lecturer = Lecturer::where('email', Session::get('lecturer_email'))->firstOrFail();
         Auth::setUser($Lecturer);
         return view('lecturer.postadmin',compact('post'));
+    }
+
+    public function password(){
+        $Lecturer = Lecturer::where('email', Session::get('lecturer_email'))->firstOrFail();
+        Auth::setUser($Lecturer);
+        return view('lecturer.changePassword');
+    }
+
+    public function changePassword(Request $request){
+        $Lecturer = Lecturer::where('email', Session::get('lecturer_email'))->firstOrFail();
+        Auth::setUser($Lecturer);
+        //dd(Auth::user());
+        if(Hash::check($request->old_password,$Lecturer->password,[]) && $request->new_password != $request->old_password && $request->new_2 == $request->new_password){
+            $Lecturer->password = bcrypt($request->new_2);
+            $Lecturer->save();
+            Alert::success('Password changed')->flash();
+            return redirect()->to(route('lecturer.dashboard'));
+        }
+        Alert::error('An error occured, please make sure you have typed the password correctly')->flash();
+        return redirect()->back();
     }
 
     public function destroy(Lecturer $teacher)

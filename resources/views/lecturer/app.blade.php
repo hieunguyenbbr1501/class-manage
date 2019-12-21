@@ -37,8 +37,8 @@
                         </span>
                     </a>
                     <div class="dropdown-content"style="width: 100%">
-                        <a href="#"><i class="fas fa-user-graduate"></i>Trang cá nhân</a>
-                        <a href="#"><i class="fas fa-user-lock"></i>Đổi mật khẩu</a>
+                        <a href="{{ route('lecturer.detail') }}"><i class="fas fa-user-graduate"></i>Trang cá nhân</a>
+                        <a href="{{ route('lecturer.password') }}"><i class="fas fa-user-lock"></i>Đổi mật khẩu</a>
                         <a href="#"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a>
                     </div>
                 </div>

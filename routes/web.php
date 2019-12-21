@@ -64,6 +64,14 @@ Route::group(['middleware' => ['checkLogin']],function (){
         'uses' => 'StudentController@search',
         'as' => 'student.search'
     ]);
+    Route::get('student/password',[
+        'uses' => 'StudentController@password',
+        'as' => 'student.password'
+    ]);
+    Route::post('student/password/change',[
+        'uses' => 'StudentController@changePassword',
+        'as' => 'student.password.change'
+    ]);
 
 });
 Route::group(['middleware' => ['checkLoginForLecturer']],function (){
@@ -95,6 +103,14 @@ Route::group(['middleware' => ['checkLoginForLecturer']],function (){
     Route::get('lecturer/post/{slug}.html',[
         'uses' => 'LecturerController@postDetail',
         'as' => 'lecturer.post.detail'
+    ]);
+    Route::get('lecturer/password',[
+        'uses' => 'LecturerController@password',
+        'as' => 'lecturer.password'
+    ]);
+    Route::post('lecturer/password/change',[
+        'uses' => 'LecturerController@changePassword',
+        'as' => 'lecturer.password.change'
     ]);
 
 });

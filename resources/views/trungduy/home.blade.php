@@ -21,7 +21,7 @@
                 </a>
                 <a href="" class="nav-home">Trang chủ</a>
             </div>
-            <div style="margin: auto 0;">Bạn chưa đăng nhập.(<a href="">Đăng nhập</a>)</div>
+            <div style="margin: auto 0;"><a href="{{ route('student.password') }}">Đổi mật khẩu</a></div>
         </div>
     </nav>
 </header>
@@ -36,6 +36,11 @@
             </form>
         </div>
     </div>
+    @if (session('alert_messages'))
+        <div class="alert alert-success">
+            Password changed successfully
+        </div>
+    @endif
     <div style="display: flex;margin-right: 10px;margin-left: 10px">
         <div class="news" style="width: 70%">
             <div class="block-courses-recently" >

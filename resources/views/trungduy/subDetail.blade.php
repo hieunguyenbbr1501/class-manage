@@ -72,18 +72,6 @@
                         <div>
                             <ul>
                                 <li>
-                                    <a href="">
-                                        <span><i class="far fa-newspaper"></i></span>
-                                        <span class="make-color">Tin tức chung</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <span><i class="fas fa-home"></i></span>
-                                        <span class="make-color">Trang chủ hệ thống</span>
-                                    </a>
-                                </li>
-                                <li>
                             <span class="allsub">
                                 <span class="sub-content"><i class="fas fa-caret-right"></i></span>
                                 <span class="make-color sub-content">Các khóa học của tôi</span>
