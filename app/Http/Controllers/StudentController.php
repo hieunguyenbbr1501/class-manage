@@ -179,9 +179,29 @@ class StudentController extends Controller
      * @param \App\Student $student
      * @return \Illuminate\Http\Response
      */
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Lecturer  $teacher
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request, Student $student)
     {
-        //
+        //dd($teacher);
+        $student = Student::where('email', Session::get('email'))->firstOrFail();
+        Auth::setUser($student);
+        $student->dob = $request->dob;
+        $student->address = $request->address;
+        $student->gender = $request->gender;
+        $file = $request->avatar;
+        $file_name = time().rand(10,99);
+        $file->move('img/avatar/',$file_name.$file->getClientOriginalName());
+        $student->avatar = 'img/avatar/'.$file_name.$file->getClientOriginalName();
+        $student->save();
+        //$teacher->save();
+        return redirect()->to(route('student.detail'));
     }
 
     /**

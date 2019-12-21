@@ -22,7 +22,7 @@
                     <h3 style="font-size: 20px;font-weight: 700">Chi tiết người dùng</h3>
                 </div>
                 <div style="margin: auto 0">
-                    <a href="{{ route('lecturer.editprofile') }}">Sửa hồ sơ cá nhân</a>
+                    <a href="{{ route('student.editprofile') }}">Sửa hồ sơ cá nhân</a>
                 </div>
             </div>
             <div>
