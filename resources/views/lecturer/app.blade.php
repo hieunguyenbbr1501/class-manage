@@ -39,7 +39,7 @@
                     <div class="dropdown-content"style="width: 100%">
                         <a href="{{ route('lecturer.detail') }}"><i class="fas fa-user-graduate"></i>Trang cá nhân</a>
                         <a href="{{ route('lecturer.password') }}"><i class="fas fa-user-lock"></i>Đổi mật khẩu</a>
-                        <a href="#"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a>
+                        <a href="{{ route('lecturer.logout') }}"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
 <footer class="page-footer">
     <div style="margin-top: 1em">
         <div>Trường Đại học 5</div>
-        <div>Bạn đã đăng nhập với tên (<a href="">{{ auth()->user()->name }}</a>)</div>
+        <div>Bạn đã đăng nhập (<a href="{{ route('lecturer.logout') }}">Đăng xuất</a>)</div>
         <div><a href="{{ route('lecturer.dashboard') }}">Trang chủ</a></div>
     </div>
 </footer>

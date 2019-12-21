@@ -202,6 +202,12 @@ class LecturerController extends Controller
         return redirect()->back();
     }
 
+    public function logout(){
+        Session::flush();
+        Auth::logout();
+        return redirect()->route('lecturer.login.get');
+    }
+
     public function destroy(Lecturer $teacher)
     {
         //

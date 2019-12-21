@@ -148,7 +148,7 @@
 <footer class="page-footer">
     <div style="margin-top: 1em">
         <div>Trường Đại học Công Nghệ - ĐHQGHN</div>
-        <div>Bạn chưa đăng nhập (<a href="">Đăng nhập</a>)</div>
+        <div>{{ auth()->user()->name }} (<a href="{{ route('student.logout') }}">Đăng xuất</a>)</div>
         <div><a href="">Trang chủ</a></div>
     </div>
 </footer>

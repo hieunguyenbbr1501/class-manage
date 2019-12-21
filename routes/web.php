@@ -76,6 +76,10 @@ Route::group(['middleware' => ['checkLogin']],function (){
         'uses' => 'StudentController@changePassword',
         'as' => 'student.password.change'
     ]);
+    Route::get('student/logout',[
+        'uses' => 'StudentController@logout',
+        'as' => 'student.logout'
+    ]);
 
 });
 Route::group(['middleware' => ['checkLoginForLecturer']],function (){
@@ -115,6 +119,10 @@ Route::group(['middleware' => ['checkLoginForLecturer']],function (){
     Route::post('lecturer/password/change',[
         'uses' => 'LecturerController@changePassword',
         'as' => 'lecturer.password.change'
+    ]);
+    Route::get('lecturer/logout',[
+        'uses' => 'LecturerController@logout',
+        'as' => 'lecturer.logout'
     ]);
 
 });

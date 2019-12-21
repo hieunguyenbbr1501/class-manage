@@ -210,6 +210,11 @@ class StudentController extends Controller
      * @param \App\Student $student
      * @return \Illuminate\Http\Response
      */
+    public function logout(){
+        Session::flush();
+        Auth::logout();
+        return redirect()->route('student.login.get');
+    }
     public function destroy(Student $student)
     {
         //

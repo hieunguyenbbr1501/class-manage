@@ -139,7 +139,7 @@
 <footer class="page-footer">
     <div style="margin-top: 1em">
         <div>Trường Đại học 5</div>
-        <div>Bạn đã đăng nhập với tên (<a href="">{{ auth()->user()->name }}</a>)</div>
+        <div>Bạn đã đăng nhập(<a href="{{ route('lecturer.logout') }}">Đăng xuất</a>)</div>
         <div><a href="{{ route('lecturer.dashboard') }}">Trang chủ</a></div>
     </div>
 </footer>
