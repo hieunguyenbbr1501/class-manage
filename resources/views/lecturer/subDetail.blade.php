@@ -8,8 +8,7 @@
 @endsection
 @section('content')
     <div class="container">
-        <h1>Thiết kế giao diện người dùng</h1>
-        <h2>Giảng viên: ABC</h2>
+        <h1>{{ $course->subject->name }}</h1>
         <div class="row page-content">
             <div class="col-lg-8">
                 <div class="sub-week">

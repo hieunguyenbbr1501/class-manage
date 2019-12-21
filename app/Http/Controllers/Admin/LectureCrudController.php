@@ -79,13 +79,5 @@ class LectureCrudController extends CrudController
             'type' => 'number',
             'name' => 'week'
         ]);
-        $this->crud->addField([
-            'label' => 'Document',
-            'type' => 'browse',
-            'type' => 'upload',
-            'upload' => true,
-            //'disk' => 'uploads',
-            'name' => 'doc_upload'
-        ]);
     }
 }
