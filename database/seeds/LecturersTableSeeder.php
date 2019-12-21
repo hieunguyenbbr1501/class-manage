@@ -17,5 +17,6 @@ class LecturersTableSeeder extends Seeder
             'code' => '17020748',
             'password' => bcrypt('test'),
         ]);
+        factory(\App\Lecturer::class,20)->create();
     }
 }
