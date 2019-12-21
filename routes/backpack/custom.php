@@ -18,4 +18,11 @@ Route::group([
     Route::crud('course', 'CourseCrudController');
     Route::crud('lecture', 'LectureCrudController');
     Route::crud('post', 'PostCrudController');
+    Route::crud('student', 'StudentCrudController');
+    Route::crud('lecturer', 'LecturerCrudController');
+    Route::get('insert/lecturer','LecturerCrudController@insertFromCSV');
+    Route::post('insert/lecturer/post','LecturerCrudController@insertAttempt');
+    Route::get('insert/student','StudentCrudController@insertFromCSV');
+    Route::post('insert/student/post','StudentCrudController@insertAttempt');
+
 }); // this should be the absolute last line of this file

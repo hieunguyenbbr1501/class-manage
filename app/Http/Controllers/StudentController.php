@@ -36,7 +36,7 @@ class StudentController extends Controller
         }
         $posts = Post::paginate(3);
         $taken_courses = Auth::user()->courses()->get();
-        return view('trungduy.home',compact('term','courses','taken_courses','posts'));
+        return view('trungduy.home', compact('term', 'courses', 'taken_courses', 'posts'));
 
     }
 
@@ -54,13 +54,15 @@ class StudentController extends Controller
         if (Auth::user()->courses->contains($course)) {
 //            dd($course->lectures()->get());
 //            dd($course);
-            return view('trungduy.subDetail',compact('course','lectures'));
-        }
-        elseif(Auth::user()->courses->contains($course->subject()->first()->pre()->first())){
-            return view('trungduy.enrol',compact('course'));
-        }
-        else{
-            return view('trungduy.not_allowed');
+            return view('trungduy.subDetail', compact('course', 'lectures'));
+        } else {
+            $subject = $course->subject;
+            $taken = $student->courses()->get();
+            $pre = $subject->pre;
+            if($student->subjects->contains($pre) || $pre->id==0){
+                return view('trungduy.enrol',compact('course','lectures'));
+            }
+            return view('trungduy.not_allowed',compact('course','lectures'));
         }
 
     }
@@ -75,30 +77,28 @@ class StudentController extends Controller
             redirect()->to(route('student.dashboard'));
         }
         $subject = $course->subject()->first();
-        if($subject->pre()->first() && $subject->pre()->first()->id !=0){
-            $pre = $subject->pre()->first();
-            if(!Auth::user()->subjects->contains($pre)){
-                dd('not allowed');
-            }
-        }
         Auth::user()->courses()->attach($course);
         Auth::user()->subjects()->attach($subject);
         return redirect()->route('student.dashboard');
     }
-    public function detail(){
+
+    public function detail()
+    {
         $student = Student::where('email', Session::get('email'))->firstOrFail();
         Auth::setUser($student);
         return view('trungduy.UserDetail');
     }
 
-    public function postDetail($slug){
+    public function postDetail($slug)
+    {
         $post = Post::where('slug', $slug)->firstOrFail();
         $student = Student::where('email', Session::get('email'))->firstOrFail();
         Auth::setUser($student);
-        return view('trungduy.postadmin',compact('post'));
+        return view('trungduy.postadmin', compact('post'));
     }
 
-    public function search(Request $request){
+    public function search(Request $request)
+    {
         $student = Student::where('email', Session::get('email'))->firstOrFail();
         Auth::setUser($student);
         $input = $request['query'];
@@ -106,8 +106,9 @@ class StudentController extends Controller
             //->orWhere('another_column', 'LIKE', '%' . $input . '%')
             // etc
             ->get();
-        return view('trungduy.searchSubjects',compact('courses'));
+        return view('trungduy.searchSubjects', compact('courses'));
     }
+
     public function editProfile(Request $request)
     {
         //

@@ -23,7 +23,7 @@ class Student extends User
     protected $guard = 'student';
 
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','address','dob','code','gender'
     ];
 
     protected $hidden = [

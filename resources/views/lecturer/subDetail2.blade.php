@@ -1,4 +1,4 @@
-@extends('trungduy/layout.app')
+@extends('lecturer.app')
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/head.css') }}">
     <link rel="stylesheet" href="{{ asset('css/subdetail.css') }}">
@@ -68,7 +68,7 @@
 
                     <div style="" class="sidebar">
                         <h2>Navigation</h2>
-                        <a href="{{ route('student.dashboard') }}" class="make-color gohome">Trang chủ</a>
+                        <a href="{{ route('lecturer.dashboard') }}" class="make-color gohome">Trang chủ</a>
                         <div>
                             <ul>
                                 <li>
@@ -91,7 +91,7 @@
                                     <ul class="display-sub">
                                         @foreach(auth()->user()->courses as $course)
                                             <li>
-                                                <a href="{{ route('student.course.detail',['id' => $course->id]) }}">
+                                                <a href="{{ route('lecturer.course.detail',['id' => $course->id]) }}">
                                                     <span><i class="fas fa-book-reader"></i></span>
                                                     <span class="make-color">{{ $course->code }}</span>
                                                 </a>

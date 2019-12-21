@@ -72,7 +72,7 @@ class LecturerController extends Controller
             return view('lecturer.subDetail',compact('course','lectures','taken_courses'));
         }
         else{
-            return view('lecturer.subDetail',compact('course','taken_courses','lectures'));
+            return view('lecturer.subDetail2',compact('course','taken_courses','lectures'));
         }
     }
 
@@ -183,4 +183,5 @@ class LecturerController extends Controller
     {
         //
     }
+
 }
