@@ -33,7 +33,7 @@ class LecturerCrudController extends CrudController
     protected function setupListOperation()
     {
         // TODO: remove setFromDb() and manually define Columns, maybe Filters
-        $this->crud->addColumns();
+        $this->addColumns();
     }
 
     protected function setupCreateOperation()

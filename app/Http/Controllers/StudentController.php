@@ -34,6 +34,11 @@ class StudentController extends Controller
             $term = Term::where('order', 'first')->where('year', $scholar_year->name)->firstOrFail();
             $courses = $term->courses()->get();
             //dd($courses);
+        } else {
+            $start_year = $year - 1;
+            $scholar_year = Year::where('start', $start_year)->firstOrFail();
+            $term = Term::where('order', 'second')->where('year', $scholar_year->name)->firstOrFail();
+            $courses = $term->courses()->get();
         }
         $posts = Post::paginate(3);
         $taken_courses = Auth::user()->courses()->get();

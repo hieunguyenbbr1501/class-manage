@@ -72,7 +72,7 @@ class LectureCrudController extends CrudController
             'name' => 'course_id',
             'entity' => 'course',
             'model' => 'App\Models\Course',
-            'attribute' => 'id',
+            'attribute' => 'code',
         ]);
         $this->crud->addField([
             'label' => 'Week',
