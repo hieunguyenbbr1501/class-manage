@@ -55,7 +55,7 @@ class CourseCrudController extends CrudController
             'type' => 'select2',
             'name' => 'subject_id',
             'entity' => 'subject',
-            'model' => 'App\Models\subject',
+            'model' => 'App\Models\Subject',
             'attribute' => 'name'
         ]);
         $this->crud->addField([
