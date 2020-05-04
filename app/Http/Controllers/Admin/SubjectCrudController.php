@@ -87,14 +87,15 @@ class SubjectCrudController extends CrudController
     {
         // your additional operations before save here
         $major = Major::where('id', $request['major_id'])->firstOrFail();
-        $related_subjects = Subject::where('major_id', $major->id)->count();
+        $related_subjects = Subject::orderBy('created_at', 'desc')->first();
+        $last_id = $related_subjects->id;
         if($request['pre_id'] == null){
 
             $this->crud->request['pre_id'] = 0;
             //dd($this->crud->request['pre_id']);
         }
 
-        $this->crud->request->request->add(['code' => $major->code . sprintf('%04d', $related_subjects)]);
+        $this->crud->request->request->add(['code' => $major->code . sprintf('%04d', $last_id)]);
         $this->crud->addField(['type' => 'hidden', 'name' => 'code']);
         $redirect_location = $this->traitStore();
         // your additional operations after save here
