@@ -76,7 +76,6 @@ class CourseCrudController extends CrudController
     public function store(StoreRequest $request)
     {
         // your additional operations before save here
-        dd($request);
         $subject = Subject::where('id', $request['subject_id'])->firstOrFail();
         $other_courses_count =  Course::where('subject_id', $subject->id)->count() + 11;
         $this->crud->request->request->add(['code' => $subject->code . ' ' . $other_courses_count]);
