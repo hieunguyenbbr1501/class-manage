@@ -90,7 +90,7 @@ class SubjectCrudController extends CrudController
         $related_subjects = Subject::orderBy('created_at', 'desc')->first();
         $last_id = 1;
         if ($related_subjects){
-            $last_id = $related_subjects->id;
+            $last_id = $related_subjects->id + 1;
         }
         if($request['pre_id'] == null){
 
