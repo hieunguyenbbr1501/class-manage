@@ -88,7 +88,7 @@ class SubjectCrudController extends CrudController
         // your additional operations before save here
         $major = Major::where('id', $request['major_id'])->firstOrFail();
         $related_subjects = Subject::orderBy('created_at', 'desc')->first();
-        $last_id = 0;
+        $last_id = 1;
         if ($related_subjects){
             $last_id = $related_subjects->id;
         }
